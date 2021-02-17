@@ -294,14 +294,17 @@ body ul {
 }
 
 .contact-info label span {
+  color: var(--second-modal-color);
   display: inline-block;
   font-size: 1.1em;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .contact-info input:focus + label span,
-.contact-info input:valid + label span {
+.contact-info input:valid + label span,
+.contact-info.is-active input + label span {
   transform: translateY(-35px);
+  color: var(--second-main-color);
 }
 
 .contact-info textarea {
@@ -323,7 +326,26 @@ body ul {
   display: none;
 } */
 
-.contact-form > span {
-  max-width: 60vw;
+.wrong-value {
+  color: transparent;
+  overflow: hidden;
   font-size: calc(8px + 1vw);
+  position: relative;
+  top: -30px;
+  z-index: -10;
+  background-color: transparent;
+  display: inline-block;
+  width: 60vw;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.contact-info.is-active .wrong-value {
+  color: white;
+  background-color: var(--form-error-color);
+  transform: translateY(28px);
+}
+
+.none {
+  display: none;
 }
