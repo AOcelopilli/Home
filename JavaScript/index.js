@@ -2,6 +2,7 @@ const d = document,
   $btnContact = d.getElementById("btnContact"),
   $formSection = d.getElementById("contact"),
   $form = d.querySelector(".contact-form"),
+  $send = d.querySelector('input[type="submit"]'),
   $contactsInfo = d.querySelectorAll(".contact-info"),
   $labels = d.querySelectorAll(".contact-info label"),
   $inputs = d.querySelectorAll(".contact-form [required]");
@@ -57,11 +58,15 @@ d.addEventListener("submit", (e) => {
     $response = d.querySelector(".contact-form-response");
 
   $loader.classList.remove("none");
+  $send.style.disabled = true;
+  $send.style.border = "solid thick gray";
 
   setTimeout(() => {
     $loader.classList.add("none");
     $response.classList.remove("none");
     $form.reset();
+    $send.style.disabled = false;
+    $send.style.border = "solid thick var(--second-main-color)";
 
     setTimeout(() => $response.classList.add("none"), 2500);
   }, 2000);

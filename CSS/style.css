@@ -60,7 +60,7 @@ body h2 {
 body h3 {
   font-size: calc(1rem + 3vw);
   color: var(--second-main-color);
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
 body p {
@@ -76,10 +76,10 @@ body ul {
   flex-direction: column;
   justify-content: space-around;
   overflow: hidden;
-  padding: 10px;
   min-height: 30vh;
   text-align: center;
-  width: 90%;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .section > * {
@@ -253,10 +253,13 @@ body ul {
 /* ----- FORM ----- */
 
 #contact {
+  position: relative;
   height: 100vh;
 }
 
 .contact-form {
+  position: absolute;
+  top: -90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -318,8 +321,8 @@ body ul {
   border-radius: 1rem;
   color: var(--text-bold-color);
   font-size: calc(1rem + 0.5vw);
+  outline: 0;
   padding: 10px;
-  margin: 10px 0 0;
 }
 
 /* .none {
@@ -344,6 +347,23 @@ body ul {
   color: white;
   background-color: var(--form-error-color);
   transform: translateY(28px);
+}
+
+.contact-form-loader,
+contact-form-response {
+  position: absolute;
+  margin: 10px auto;
+}
+
+.contact-form-loader {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .none {
