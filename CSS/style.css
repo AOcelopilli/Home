@@ -289,7 +289,6 @@ body ul {
 
 .contact-form {
   position: absolute;
-  top: -90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
