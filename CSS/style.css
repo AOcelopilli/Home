@@ -44,6 +44,7 @@ body {
   align-items: center;
   text-align: justify;
   width: 100%;
+  max-width: 1440px;
   overflow-x: hidden;
 }
 
@@ -61,7 +62,7 @@ body h2 {
 body h3 {
   font-size: calc(1rem + 3vw);
   color: var(--second-main-color);
-  margin: calc(10px + 2vw) auto;
+  margin: calc(25px + 2vh) auto;
 }
 
 body p {
@@ -76,7 +77,6 @@ body ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  overflow: hidden;
   min-height: 30vh;
   text-align: center;
   width: 100%;
@@ -91,7 +91,8 @@ body ul {
 
 #welcome {
   align-items: center;
-  background: url("/assets/images/welcome.jpg") no-repeat center center;
+  background: url("https://github.com/angelp495/Home/blob/master/assets/images/welcome.JPG?raw=true")
+    no-repeat center center;
   background-size: cover;
   color: var(--primary-main-color);
   display: flex;
@@ -147,7 +148,8 @@ body ul {
 /* ------ SERVICES ------ */
 
 #services {
-  background: url("/assets//images/services.jpg") no-repeat center center;
+  background: url("https://github.com/angelp495/Home/blob/master/assets/images/services.JPG?raw=true")
+    no-repeat center center;
   background-size: cover;
   position: relative;
   color: var(--text-color);
@@ -251,7 +253,8 @@ body ul {
 /* ------ HOBBIES ------ */
 
 #hobbies {
-  background: url("/assets//images/puzzles.jpg") no-repeat center center;
+  background: url("https://github.com/angelp495/Home/blob/master/assets/images/puzzles.JPG?raw=true")
+    no-repeat center center;
   background-size: cover;
   position: relative;
   color: var(--text-color);
@@ -284,18 +287,19 @@ body ul {
 
 #contact {
   position: relative;
-  height: 80vh;
+  height: 100vh;
 }
 
 .contact-form {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: start;
   height: 70vh;
   /* Position relative to span outside contact-info */
   position: relative;
+  margin: calc(10px + 2vh);
 }
 
 .contact-info {
@@ -307,21 +311,23 @@ body ul {
 .contact-info textarea {
   width: 60vw;
   padding: 10px;
-  margin: 30px 0 0;
+  margin: 10px 0 0;
   font-size: 1rem;
   color: var(--text-color);
   border: thin solid gray;
   border-radius: 4px;
   background: transparent;
+  text-align: center;
 }
 
 .contact-info label {
   color: var(--text-color);
+  width: 100%;
   font-weight: bold;
   position: absolute;
   padding: 0 10px;
-  top: 40px;
-  left: 70px;
+  top: 20px;
+  left: 10px;
   z-index: -1;
 }
 
