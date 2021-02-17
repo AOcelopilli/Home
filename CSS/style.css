@@ -52,6 +52,7 @@ body h1 {
 }
 
 body h2 {
+  margin: calc(10px + 3vh) auto;
   font-size: calc(2rem + 2vw);
   color: var(--primary-main-color);
   font-weight: bolder;
@@ -60,7 +61,7 @@ body h2 {
 body h3 {
   font-size: calc(1rem + 3vw);
   color: var(--second-main-color);
-  margin: 0 auto;
+  margin: calc(10px + 2vw) auto;
 }
 
 body p {
@@ -185,11 +186,16 @@ body ul {
 
 #techs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 }
 
+@media (max-width: 800px) {
+  #techs {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
 .tech {
-  margin: 10px;
+  margin: 10px 20px;
 }
 
 .tech img {
@@ -244,6 +250,30 @@ body ul {
 }
 /* ------ HOBBIES ------ */
 
+#hobbies {
+  background: url("/assets//images/puzzles.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: var(--text-color);
+}
+
+#hobbies::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+#hobbies > * {
+  position: relative;
+  z-index: 10;
+}
+
 #hobbies p {
   margin: 10px auto;
   padding: 10px;
@@ -254,7 +284,7 @@ body ul {
 
 #contact {
   position: relative;
-  height: 100vh;
+  height: 80vh;
 }
 
 .contact-form {
@@ -324,10 +354,6 @@ body ul {
   outline: 0;
   padding: 10px;
 }
-
-/* .none {
-  display: none;
-} */
 
 .wrong-value {
   color: transparent;
