@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+
+:root {
+  /* Text */
+  --primary-main-color: #f7e10e;
+  --primary-modal-color: #dec90d;
+  --second-main-color: #64f5ae;
+  --second-modal-color: #3a8b64;
+  --text-color: #989a9e;
+  --text-bold-color: #747679;
+  --bg-color: #fff;
+  /* Icons */
+  --html: #ff5733;
+  --css: #1572b6;
+  --javascript: #f7df1e;
+  --php: #777bb4;
+  --git: #f05032;
+  --linux: #fcc624;
+  /* Form */
+  --form-ok-color: #4caf50;
+  --form-error-color: #f44336;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body h1 {
+  font-size: calc(2rem + 4vw);
+}
+
+body h2 {
+  font-size: calc(2rem + 2vw);
+  color: var(--primary-main-color);
+  font-weight: bolder;
+}
+
+body h3 {
+  font-size: calc(1rem + 3vw);
+  color: var(--second-main-color);
+  margin: 10px auto;
+}
+
+body p {
+  font-size: calc(1rem + 1vw);
+}
+
+body ul {
+  font-size: calc(1rem + 1vw);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 10px;
+  min-height: 30vh;
+  text-align: center;
+  width: 90%;
+}
+
+.section > * {
+  margin: 10px auto;
+}
+
+/* ------ WELCOME ------ */
+
+#welcome {
+  align-items: center;
+  background: url("/assets/images/welcome.jpg") no-repeat center center;
+  background-size: cover;
+  color: var(--primary-main-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  justify-content: space-around;
+  position: relative;
+}
+
+#welcome::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+#welcome > * {
+  position: relative;
+  z-index: 10;
+}
+
+#welcome h2 {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  font-size: calc(1rem + 2vw);
+  color: var(--primary-modal-color);
+}
+
+#welcome button {
+  background: transparent;
+  padding: 10px;
+  color: var(--text-color);
+  border: thick solid var(--second-main-color);
+  border-radius: 4rem;
+  outline: 0;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: calc(1.2rem + 1vw);
+}
+
+#welcome button:active {
+  transform: scale(0.98);
+  border: thick solid white;
+}
+
+/* ------ ABOUT ------ */
+
+/* ------ SERVICES ------ */
+
+#services {
+  background: url("/assets//images/services.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: var(--text-color);
+}
+
+#services::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+#services > * {
+  position: relative;
+  z-index: 10;
+}
+
+#services section:nth-of-type(2n + 1) {
+  text-align: right;
+}
+
+#services section:nth-of-type(2n) {
+  text-align: left;
+}
+
+/* ------ TECHNOLOGIES ------ */
+
+#tecnologies {
+  width: 100%;
+}
+
+#techs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.tech {
+  margin: 10px;
+}
+
+.tech img {
+  padding: 5px;
+  background-color: rgb(0, 0, 0);
+  width: 5rem;
+  height: 5rem;
+}
+
+.tech p {
+  margin: 10px auto;
+  font-size: calc(1rem + 1vw);
+  text-align: justify;
+}
+
+.tech.html img {
+  background-color: var(--html);
+}
+
+.tech.css img {
+  background-color: var(--css);
+}
+
+.tech.javascript img {
+  background-color: var(--javascript);
+}
+
+.tech.php img {
+  background-color: var(--php);
+}
+
+.tech.git img {
+  background-color: var(--git);
+}
+
+.tech.linux img {
+  background-color: var(--linux);
+}
+
+/* ------ ABILITIES ------ */
+#abilities ul {
+  list-style: none;
+}
+
+#abilities li {
+  border-left: var(--primary-modal-color) solid thin;
+  display: inline-block;
+  padding: 0 10px;
+}
+#abilities li:last-child {
+  border-right: var(--primary-main-color) solid thin;
+}
+/* ------ HOBBIES ------ */
+
+#hobbies p {
+  margin: 10px auto;
+  padding: 10px;
+  text-align: left;
+}
+
+/* ----- FORM ----- */
+
+#contact {
+  height: 100vh;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  /* Position relative to span outside contact-info */
+  position: relative;
+}
+
+.contact-info {
+  position: relative;
+  width: 75vw;
+}
+
+.contact-info input,
+.contact-info textarea {
+  width: 60vw;
+  padding: 10px;
+  margin: 30px 0 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  border: thin solid gray;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.contact-info label {
+  color: var(--text-color);
+  font-weight: bold;
+  position: absolute;
+  padding: 0 10px;
+  top: 40px;
+  left: 70px;
+  z-index: -1;
+}
+
+.contact-info label span {
+  display: inline-block;
+  font-size: 1.1em;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.contact-info input:focus + label span,
+.contact-info input:valid + label span {
+  transform: translateY(-35px);
+}
+
+.contact-info textarea {
+  resize: none;
+  height: 80px;
+}
+
+.contact-form input[type="submit"] {
+  background: transparent;
+  border: solid thick var(--second-main-color);
+  border-radius: 1rem;
+  color: var(--text-bold-color);
+  font-size: calc(1rem + 0.5vw);
+  padding: 10px;
+  margin: 10px 0 0;
+}
+
+/* .none {
+  display: none;
+} */
+
+.contact-form > span {
+  max-width: 60vw;
+  font-size: calc(8px + 1vw);
+}

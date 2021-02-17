@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/style.css">
+
+  <title>Angel Pineda</title>
+</head>
+
+<body>
+  <div class="section" id="welcome">
+    <div>
+      <h1>Angel Pineda</h1>
+      <h2>Desarrollador Web</h2>
+    </div>
+
+    <p>
+      Maquetación de paginas web y programación de funcionalidades.
+    </p>
+    <button id="btnContact">Contactame</button>
+
+  </div>
+  <div class="section" id="about">
+    <h2>Sobre mí</h2>
+    <p>Desarrollador web, disfruto el llevar a cabo la maquetación e interactividad de interfaces web, agregando
+      diferentes e interesantes funcionalidades.</p>
+
+    <p>Eh descubierto el enorme mundo de la programación y me agreda.</p>
+  </div>
+  <div class="section" id="services">
+    <h2>Actividades</h2>
+    <section>
+      <h3>Maquetacion web</h3>
+      <p>Llevo diseños web al mundo del internet, creando sitios y agregando elementos para su creación</p>
+    </section>
+    <section>
+      <h3>Programación web</h3>
+      <p>Creo interesantes funcionalidades y efectos a paginas a traves de la programacion</p>
+    </section>
+    <section>
+      <h3>SEO</h3>
+      <p>Estructuración semantica de las paginas para un mejor resultado en
+        busquedas web</p>
+    </section>
+  </div>
+  <div class="section" id="knowledge">
+    <h2>Conocimientos</h2>
+
+    <section id="technologies">
+      <h3>Tecnologias</h3>
+      <div id="techs">
+        <div class="tech html">
+          <img src="./assets/icons/html.svg" alt="HTML">
+          <p>HTML es el lenguaje de marcado utilizado para estructurar la informacion escrita en paginas web.</p>
+        </div>
+        <div class="tech css">
+          <img src="./assets/icons/css.svg" alt="HTML">
+          <p>CSS es el lenguaje de estilos utilizando para mejorar la apariencia de las paginas web.</p>
+        </div>
+        <div class="tech javascript">
+          <img src="./assets/icons/javascript.svg" alt="HTML">
+          <p>JavaScript es el lenguaje de programación utilizado por los navegadores para crear interactividad.</p>
+        </div>
+        <div class="tech php">
+          <img src="./assets/icons/php.svg" alt="HTML">
+          <p>PHP es un lenguaje de programación utilizado en los navegadores.</p>
+        </div>
+        <div class="tech git">
+          <img src="./assets/icons/git.svg" alt="HTML">
+          <p>Git es un lenguaje utilizado para el control de versiones y almacenado en GitHub o GitLab</p>
+        </div>
+        <div class="tech linux">
+          <img src="./assets/icons/linux.svg" alt="HTML">
+          <p>Linux es el kernel que junto con GNU crean un increible Sistema Operativo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="abilities">
+      <h3>Habilidades</h3>
+      <ul>
+        <li>Creativo</li>
+        <li>Autodidacta</li>
+        <li>Responsable</li>
+        <li>Competitivo</li>
+        <li>Trabajo en equipo</li>
+      </ul>
+    </section>
+
+    <section id="hobbies">
+      <h3>Hobbies</h3>
+
+      <p>
+        <strong>Puzzles:</strong> Me gusta resolver acertijos, laberintos, cualquier cosa que requiera una solución me
+        entretiene, ultimamente, la programación.
+      </p>
+
+      <p><strong>Ejercicio:</strong> No soy fisicocultirista, pero me ejercicito regularmente por salud.
+      </p>
+
+      <p><strong>Lectura:</strong> Eh descubierto cosas muy interesantes en los libros, mi favorito es "Creativity Inc"
+        de Edwin
+        Catmull, cofundador de Pixar.</p>
+
+      <p><strong>Meditación:</strong> La programación es estresante por naturaleza, por eso es importante detenerse de
+        vez en cuando.</p>
+
+      <p><strong>Videojuegos:</strong> ¿De verdad esperas una explicación?.</p>
+    </section>
+
+    <section>
+      <h3>Actualidad</h3>
+      <p>La programación como los idiomas es algo de nunca acabar, por eso actualmente estoy aprendiendo <strong>React
+          js</strong> a la
+        par de <strong>Node js</strong>.</p>
+      <br>
+      <p>Me estoy preparando para obtener mi certificado de inglés a mitad de este 2021.</p>
+    </section>
+  </div>
+  <div class="section" id="contact">
+    <h3>Contactame</h3>
+    <form class="contact-form" method="POST">
+      <div class="contact-info" id="name">
+        <input type="text" name="name" title="Nombre sólo acepta letras y espaciones en blanco"
+          pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+        <label for="name">Nombre...</label>
+      </div>
+      <span class="none">Nombre sólo acepta letras y espaciones en blanco</span>
+
+      <div class="contact-info">
+        <input type="email" name="email" title="Email incorrecto"
+          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+        <label for="email">Correo...</label>
+      </div>
+
+      <div class="contact-info">
+        <input type="text" name="subject" title="El Asunto es un campo requerido" required>
+        <label for="subject">Asunto...</label>
+      </div>
+
+      <div class="contact-info">
+        <textarea name="comments" cols="30" rows="5" placeholder="Escribe tus comentarios..." data-pattern="^.{1,255}$"
+          title="Tu comentario no debe exceder los 255 caracteres." required></textarea>
+      </div>
+      <input type="submit" value="Enviar">
+
+      <div class="contact-form-loader">
+        <img src="/assets/loader/spinning-circles.svg" alt="Cargando">
+      </div>
+      <div class="contact-form-response">
+        <p>Los datos han sido enviados.</p>
+      </div>
+    </form>
+  </div>
+  <script src="JavaScript/index.js"></script>
+</body>
+
+</html>
