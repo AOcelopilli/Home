@@ -403,10 +403,13 @@ section {
   transform: translateY(28px);
 }
 
-.contact-form-loader,
-.contact-form-response {
+.contact-form-loader {
   position: absolute;
   margin: 10px auto;
+}
+
+.contact-form-response {
+  margin: calc(10px + 2vh) auto;
 }
 
 .contact-form-loader {
