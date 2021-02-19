@@ -66,12 +66,15 @@ d.addEventListener("submit", (e) => {
   fetch("https://formsubmit.co/ajax/angeljpa95@gmail.com", {
     method: "POST",
     body: new FormData(e.target),
-    mode: "no-cors",
+    cors: "no-cors",
   })
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
-      console.log(json);
+      //console.log(json);
+      $loader.classList.add("none");
+      $response.classList.remove("none");
       $response.innerHTML = `<p>${json.message}</p>`;
+      $form.reset();
     })
     .catch((err) => {
       console.log(err);
