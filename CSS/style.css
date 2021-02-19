@@ -186,6 +186,7 @@ section {
 /* ------ ABOUT ------ */
 #introduction p {
   text-align: justify;
+  width: 80vw;
   margin: calc(10px + 1vh) auto;
 }
 /* ------ SERVICES ------ */
@@ -220,6 +221,12 @@ section {
   margin: calc(5px + 2vw);
   padding: calc(10px + 2vh);
   border-radius: 1rem;
+}
+
+#activities p {
+  text-align: center;
+  width: 70vw;
+  margin: 0 auto;
 }
 
 /* ------ TECHNOLOGIES ------ */
