@@ -169,7 +169,7 @@ section {
 #welcome button {
   background: transparent;
   padding: 10px;
-  color: var(--text-color);
+  color: white;
   border: thick solid var(--second-main-color);
   border-radius: 4rem;
   outline: 0;
@@ -217,10 +217,23 @@ section {
 }
 
 #activities div {
-  background-color: rgba(255, 255, 255, 0.2);
   margin: calc(5px + 2vw);
   padding: calc(10px + 2vh);
   border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}
+
+#activities div::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  filter: blur(3px);
 }
 
 #activities p {
