@@ -5,7 +5,9 @@ const d = document,
   $send = d.querySelector('input[type="submit"]'),
   $contactsInfo = d.querySelectorAll(".contact-info"),
   $labels = d.querySelectorAll(".contact-info label"),
-  $inputs = d.querySelectorAll(".contact-form [required]");
+  $inputs = d.querySelectorAll(".contact-form [required]"),
+  $loader = d.querySelector(".contact-form-loader"),
+  $response = d.querySelector(".contact-form-response");
 
 /* Text of Labels to Spans */
 $labels.forEach((label) => {
@@ -60,6 +62,33 @@ d.addEventListener("submit", (e) => {
   $loader.classList.remove("none");
   $send.style.disabled = true;
   $send.style.border = "solid thick gray";
+
+  fetch("https://formsubmit.co/ajax/angeljpa95@gmail.com", {
+    method: "POST",
+    body: new FormData(e.target),
+    mode: "no-cors",
+  })
+    .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+    .then((json) => {
+      console.log(json);
+      $response.innerHTML = `<p>${json.message}</p>`;
+    })
+    .catch((err) => {
+      console.log(err);
+      let message = err.statusText || "An error has ocurried";
+      $response.innerHTML = `< p >Error ${err.status}: ${message}.</p >`;
+    })
+    .finally(() =>
+      setTimeout(() => {
+        $loader.classList.add("none");
+        $response.classList.remove("none");
+        $form.reset();
+        $send.style.disabled = false;
+        $send.style.border = "solid thick var(--second-main-color)";
+
+        setTimeout(() => $response.classList.add("none"), 2500);
+      }, 2000)
+    );
 
   setTimeout(() => {
     $loader.classList.add("none");

@@ -38,18 +38,20 @@ html {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: justify;
-  width: 100%;
+  width: 100vw;
   max-width: 1440px;
   overflow-x: hidden;
 }
 
 body h1 {
-  font-size: calc(2rem + 4vw);
+  font-size: calc(40px + 4vw);
+  font-weight: bold;
 }
 
 body h2 {
@@ -62,7 +64,7 @@ body h2 {
 body h3 {
   font-size: calc(1rem + 3vw);
   color: var(--second-main-color);
-  margin: calc(25px + 2vh) auto;
+  margin: calc(5px + 2vh) auto calc(10px + 2vh);
 }
 
 body p {
@@ -73,18 +75,56 @@ body ul {
   font-size: calc(1rem + 1vw);
 }
 
-.section {
+[id] {
+  scroll-margin-top: 8ex;
+}
+
+/* ----- MENU ----- */
+#menu {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #222;
+  width: 100vw;
+  color: var(--second-main-color);
+}
+
+#menu ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+#menu li {
+  display: inline-block;
+  padding: 0 1vw;
+  margin: 2vh auto;
+}
+
+#menu li:first-child {
+  margin: 2vh 2vw;
+}
+
+#menu li a {
+  text-decoration: none;
+  color: var(--second-main-color);
+}
+
+/* ---- MAIN ---- */
+
+section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   min-height: 30vh;
   text-align: center;
   width: 100%;
-  padding: 0 10px;
-}
-
-.section > * {
-  margin: 10px auto;
+  padding: 0 10px calc(10px + 2vh);
 }
 
 /* ------ WELCOME ------ */
@@ -144,10 +184,13 @@ body ul {
 }
 
 /* ------ ABOUT ------ */
-
+#introduction p {
+  text-align: justify;
+  margin: calc(10px + 1vh) auto;
+}
 /* ------ SERVICES ------ */
 
-#services {
+#activities {
   background: url("https://github.com/angelp495/Home/blob/master/assets/images/services.JPG?raw=true")
     no-repeat center center;
   background-size: cover;
@@ -155,7 +198,7 @@ body ul {
   color: var(--text-color);
 }
 
-#services::before {
+#activities::before {
   content: "";
   display: block;
   position: absolute;
@@ -167,17 +210,16 @@ body ul {
   z-index: 1;
 }
 
-#services > * {
+#activities > * {
   position: relative;
   z-index: 10;
 }
 
-#services section:nth-of-type(2n + 1) {
-  text-align: right;
-}
-
-#services section:nth-of-type(2n) {
-  text-align: left;
+#activities div {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: calc(5px + 2vw);
+  padding: calc(10px + 2vh);
+  border-radius: 1rem;
 }
 
 /* ------ TECHNOLOGIES ------ */
@@ -237,30 +279,16 @@ body ul {
   background-color: var(--linux);
 }
 
-/* ------ ABILITIES ------ */
-#abilities ul {
-  list-style: none;
-}
+/* ----- FORM ----- */
 
-#abilities li {
-  border-left: var(--primary-modal-color) solid thin;
-  display: inline-block;
-  padding: 0 10px;
-}
-#abilities li:last-child {
-  border-right: var(--primary-main-color) solid thin;
-}
-/* ------ HOBBIES ------ */
-
-#hobbies {
-  background: url("https://github.com/angelp495/Home/blob/master/assets/images/puzzles.JPG?raw=true")
-    no-repeat center center;
+#contact {
+  background: url("/assets/images/contact.JPG") no-repeat center center;
   background-size: cover;
   position: relative;
   color: var(--text-color);
 }
 
-#hobbies::before {
+#contact::before {
   content: "";
   display: block;
   position: absolute;
@@ -272,22 +300,9 @@ body ul {
   z-index: 1;
 }
 
-#hobbies > * {
+#contact > * {
   position: relative;
   z-index: 10;
-}
-
-#hobbies p {
-  margin: 10px auto;
-  padding: 10px;
-  text-align: left;
-}
-
-/* ----- FORM ----- */
-
-#contact {
-  position: relative;
-  height: 100vh;
 }
 
 .contact-form {
@@ -309,12 +324,13 @@ body ul {
 
 .contact-info input,
 .contact-info textarea {
+  outline: 0;
   width: 60vw;
   padding: 10px;
   margin: 10px 0 0;
   font-size: 1rem;
   color: var(--text-color);
-  border: thin solid gray;
+  border: thin solid var(--text-bold-color);
   border-radius: 4px;
   background: transparent;
   text-align: center;
@@ -347,7 +363,7 @@ body ul {
 
 .contact-info textarea {
   resize: none;
-  height: 80px;
+  height: calc(50px + 2vh);
 }
 
 .contact-form input[type="submit"] {
@@ -381,7 +397,7 @@ body ul {
 }
 
 .contact-form-loader,
-contact-form-response {
+.contact-form-response {
   position: absolute;
   margin: 10px auto;
 }
