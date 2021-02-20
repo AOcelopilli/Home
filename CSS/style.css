@@ -4,12 +4,12 @@
 :root {
   /* Text */
   --primary-main-color: #f7e10e;
-  --primary-modal-color: #dec90d;
+  --primary-modal-color: #e0cc17;
   --second-main-color: #64f5ae;
   --second-modal-color: #3a8b64;
   --text-color: #989a9e;
   --text-bold-color: #747679;
-  --bg-color: #fff;
+  --bg-color: rgb(243, 239, 239);
   /* Icons */
   --html: #ff5733;
   --css: #1572b6;
@@ -56,19 +56,19 @@ body h1 {
 
 body h2 {
   margin: calc(10px + 3vh) auto;
-  font-size: calc(2rem + 2vw);
+  font-size: calc(36px + 3vw);
   color: var(--primary-main-color);
   font-weight: bolder;
 }
 
 body h3 {
-  font-size: calc(1rem + 3vw);
+  font-size: calc(28px + 2vw);
   color: var(--second-main-color);
   margin: calc(5px + 2vh) auto calc(10px + 2vh);
 }
 
 body p {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(18px + 1vw);
 }
 
 body ul {
@@ -79,6 +79,27 @@ body ul {
   scroll-margin-top: 8ex;
 }
 
+/* ----- SCROLL BUTTON ----- */
+#btnToTop {
+  font-size: 4rem;
+  cursor: pointer;
+  opacity: 1;
+  position: fixed;
+  height: 4rem;
+  width: 4rem;
+  z-index: 999;
+  top: 85vh;
+  right: 20px;
+  outline: none;
+  background-color: var(--second-main-color);
+  transition: all 0.5s ease-out;
+  border-radius: 50%;
+  border: thick solid var(--second-modal-color);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+#btn i {
+}
 /* ----- MENU ----- */
 #menu {
   position: sticky;
@@ -101,18 +122,35 @@ body ul {
 }
 
 #menu li {
-  display: inline-block;
-  padding: 0 1vw;
+  padding: 10px;
+  padding: 1vh 1vw;
   margin: 2vh auto;
+  border: thin solid white;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease-out;
 }
 
 #menu li:first-child {
   margin: 2vh 2vw;
 }
 
+#menu li img {
+  height: 2rem;
+}
+
 #menu li a {
+  font-weight: bold;
   text-decoration: none;
   color: var(--second-main-color);
+}
+
+#menu li:hover {
+  border: thin solid var(--second-modal-color);
+  background-color: var(--second-modal-color);
+}
+
+#menu li:hover a {
+  color: white;
 }
 
 /* ---- MAIN ---- */
@@ -150,7 +188,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
@@ -164,6 +202,12 @@ section {
   margin: 0;
   font-size: calc(1rem + 2vw);
   color: var(--primary-modal-color);
+  letter-spacing: 4px;
+}
+
+#welcome p {
+  width: 60vw;
+  letter-spacing: 2px;
 }
 
 #welcome button {
@@ -184,6 +228,11 @@ section {
 }
 
 /* ------ ABOUT ------ */
+
+#introduction h2 {
+  color: var(--primary-modal-color);
+}
+
 #introduction p {
   text-align: justify;
   width: 80vw;
@@ -207,7 +256,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
@@ -217,10 +266,11 @@ section {
 }
 
 #activities div {
-  margin: calc(5px + 2vw);
+  margin: calc(5px + 2vw) auto;
   padding: calc(10px + 2vh);
   border-radius: 1rem;
   overflow: hidden;
+  width: 80vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -244,8 +294,12 @@ section {
 
 /* ------ TECHNOLOGIES ------ */
 
-#tecnologies {
+#technologies {
   width: 100%;
+}
+
+#technologies h2 {
+  color: var(--primary-modal-color);
 }
 
 #techs {
@@ -260,9 +314,13 @@ section {
 }
 .tech {
   margin: 10px 20px;
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .tech img {
+  border-radius: 3px;
   padding: 5px;
   background-color: rgb(0, 0, 0);
   width: 5rem;
@@ -270,6 +328,8 @@ section {
 }
 
 .tech p {
+  width: 80%;
+  letter-spacing: 1px;
   margin: 10px auto;
   font-size: calc(1rem + 1vw);
   text-align: justify;
@@ -332,14 +392,17 @@ section {
   align-items: center;
   justify-content: start;
   height: 70vh;
+  width: 40vw;
   /* Position relative to span outside contact-info */
   position: relative;
-  margin: calc(10px + 2vh);
+  margin: calc(10px + 2vh) auto;
 }
 
 .contact-info {
   position: relative;
-  width: 75vw;
+  width: 100%;
+  font-size: 18px;
+  width: initial;
 }
 
 .contact-info input,
@@ -376,7 +439,9 @@ section {
 
 .contact-info input:focus + label span,
 .contact-info input:valid + label span,
-.contact-info.is-active input + label span {
+.contact-info.is-active input + label span,
+.contact-info textarea:focus + label span,
+.contact-info textarea:valid + label span {
   transform: translateY(-35px);
   color: var(--second-main-color);
 }
@@ -390,7 +455,7 @@ section {
   background: transparent;
   border: solid thick var(--second-main-color);
   border-radius: 1rem;
-  color: var(--text-bold-color);
+  color: white;
   font-size: calc(1rem + 0.5vw);
   outline: 0;
   padding: 10px;
@@ -438,4 +503,5 @@ section {
 
 .none {
   display: none;
+  opacity: 0;
 }

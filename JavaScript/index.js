@@ -7,7 +7,8 @@ const d = document,
   $labels = d.querySelectorAll(".contact-info label"),
   $inputs = d.querySelectorAll(".contact-form [required]"),
   $loader = d.querySelector(".contact-form-loader"),
-  $response = d.querySelector(".contact-form-response");
+  $response = d.querySelector(".contact-form-response"),
+  $btnToTop = d.getElementById("btnToTop");
 
 /* Text of Labels to Spans */
 $labels.forEach((label) => {
@@ -20,10 +21,29 @@ $labels.forEach((label) => {
     .join("");
 });
 
-/* Scroll to Contact Form */
+/* Btn to top */
+d.addEventListener("scroll", (e) => {
+  let scrollY = window.pageYOffset;
+  if (scrollY > 480) {
+    $btnToTop.classList.remove("none");
+  } else {
+    $btnToTop.classList.add("none");
+  }
+});
+
 d.addEventListener("click", (e) => {
-  if (!e.target.matches(`#btnContact`)) return;
-  $formSection.scrollIntoView();
+  /* Scroll to Form */
+  if (e.target.matches(`#btnContact`)) {
+    $formSection.scrollIntoView();
+  }
+
+  /* Scroll to Top */
+  if (e.target.matches(`#btnToTop`) || e.target.matches(`#btnToTop *`)) {
+    /* Safari */
+    d.body.scrollTop = 0;
+    /* Resto de navegadores */
+    d.documentElement.scrollTop = 0;
+  }
 });
 
 /* Form validation */
