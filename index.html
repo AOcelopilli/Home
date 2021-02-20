@@ -6,13 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/style.css">
 
+  <script src="https://kit.fontawesome.com/d3eb4888e7.js" crossorigin="anonymous"></script>
+
   <title>Angel Pineda</title>
+
+  <!-- CDNS -->
 </head>
 
 <body>
+  <button id="btnToTop" class="none"><i class="fas fa-sort-up"></i></button>
   <header id="menu">
     <ul>
-      <li><a href="#welcome">Inicio</a></li>
+      <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a> </li>
       <!-- <li>Portafolio</li>
       <li>Contacto</li>
       <li>CV</li> -->
@@ -21,7 +26,7 @@
 
   <main id="main">
     <section id="welcome">
-      <h1>Angel Pienda</h1>
+      <h1>Angel Pineda</h1>
 
       <h2>Desarrollador Web</h2>
 
@@ -115,10 +120,13 @@
         </div>
 
         <div class="contact-info" id="comments">
-          <textarea name="comments" cols="30" rows="5" placeholder="Escribe tus comentarios..."
-            data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 255 caracteres." required></textarea>
+          <textarea name="comments" cols="30" rows="5" data-pattern="^.{1,255}$"
+            title="Tu comentario no debe exceder los 255 caracteres." required></textarea>
+          <label for="comnments">Comentarios...</label>
           <span class="wrong-value">Tu comentario no debe exceder los 255 caracteres.</span>
         </div>
+
+
         <input type="submit" value="Enviar">
 
         <div class="contact-form-loader none">
