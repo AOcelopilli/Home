@@ -123,8 +123,8 @@ body p {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
     font-size: 10px;
     position: fixed;
-    top: 75vh;
-    left: 48vw;
+    bottom: 4rem;
+    right: 3rem;
     outline: none;
     transition: all 0.5s ease-out;
     height: 100px;
@@ -162,13 +162,13 @@ body p {
     background-color: var(--third-main-color);
     border-radius: 50%;
     border: thick solid var(--third-modal-color);
-    bottom: 2vh;
+    bottom: 1rem;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
     font-size: 30px;
     height: 4rem;
     outline: none;
     position: fixed;
-    right: 2vw;
+    right: 1rem;
     transition: all 0.5s ease-out;
     width: 4rem;
     z-index: 100;
@@ -178,16 +178,14 @@ body p {
     background-color: var(--third-main-color);
     border-radius: 50%;
     border: thick solid var(--third-modal-color);
-    bottom: 2vh;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
     height: 4rem;
     font-size: 65px;
     outline: none;
     position: fixed;
-    right: 2vw;
     transition: all 0.5s ease-out;
-    bottom: 2vh;
-    right: 25vw;
+    bottom: 1rem;
+    right: 5.3rem;
     width: 4rem;
     z-index: 20;
   }
@@ -347,7 +345,7 @@ body p {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
-  filter: blur(3px);
+  filter: blur(10px);
 }
 
 #services div h3 {
@@ -364,7 +362,7 @@ body p {
 #services .waves-bot {
   align-items: center;
   height: 30px;
-  width: 100%;
+  width: 100vw;
   position: relative;
   overflow: hidden;
   z-index: 10;
@@ -374,7 +372,7 @@ body p {
   top: 0;
   left: 0;
   position: absolute;
-  max-width: 120%;
+  width: 100vw;
   animation: oceanR 10s infinite;
 }
 
@@ -435,10 +433,15 @@ body p {
   width: 100%;
 }
 
+#balls .container div {
+  box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.589);
+}
 /* ---- SMALL ---- */
 
 #balls .small,
-#balls .small1 {
+#balls .small1,
+#balls .small2,
+#balls .small3 {
   position: absolute;
   bottom: 0%;
   width: 1rem;
@@ -450,132 +453,136 @@ body p {
 
 #balls .container .small:nth-child(1n) {
   background-color: #afff94;
-  animation: up1 18s infinite;
+  animation: top2down-1 18s infinite;
 }
 #balls .container .small:nth-child(2n) {
   background-color: #ffeb94;
-  animation: up2 22s infinite;
+  animation: top2down-1 22s infinite;
+  left: 20px;
 }
 #balls .container .small:nth-child(3n) {
   background-color: #ff94ff;
-  animation: up3 26s infinite;
+  animation: top2down-1 26s infinite;
+  left: 40px;
 }
 #balls .container .small:nth-child(4n) {
   background-color: #94dbff;
-  animation: up4 30s infinite;
+  animation: top2down-1 30s infinite;
+  left: 60px;
 }
-
-/* ---- group 2 ---- */
 
 #balls .container .small1:nth-child(1n) {
   background-color: #ff94ff;
-  animation: up1 34s infinite;
+  animation: top2down-1 34s infinite;
+  left: 140px;
 }
 #balls .container .small1:nth-child(2n) {
   background-color: #94dbff;
-  animation: up2 28s infinite;
+  animation: top2down-1 28s infinite;
+  left: 80px;
 }
 #balls .container .small1:nth-child(3n) {
   background-color: #afff94;
-  animation: up3 22s infinite;
+  animation: top2down-1 22s infinite;
+  left: 100px;
 }
 #balls .container .small1:nth-child(4n) {
   background-color: #ffeb94;
-  animation: up4 16s infinite;
+  animation: top2down-1 16s infinite;
+  left: 120px;
 }
 
-/* ---- ONE --- */
-@keyframes up1 {
+/* ---- Zig Zag from TopLeft 2 BttmRight --- */
+@keyframes top2down-1 {
   0% {
-    bottom: 0%;
-    transform: translateX(0vw);
-  }
-  25% {
-    bottom: 20%;
-    transform: translateX(100vw);
-  }
-  50% {
-    bottom: 40%;
-    transform: translateX(0vw);
-  }
-  75% {
-    bottom: 60%;
-    transform: translateX(100vw);
-  }
-  100% {
     bottom: 100%;
     transform: translateX(0vw);
   }
-}
-/* ---- TOW --- */
-
-@keyframes up2 {
-  0% {
-    bottom: 0%;
-    transform: translateX(100vw);
-  }
   25% {
-    bottom: 15%;
-    transform: translateX(0vw);
+    bottom: 0%;
+    transform: translateX(25vw);
   }
   50% {
-    bottom: 45%;
-    transform: translateX(100vw);
+    bottom: 100%;
+    transform: translateX(50vw);
   }
   75% {
-    bottom: 80%;
-    transform: translateX(0vw);
+    bottom: 0%;
+    transform: translateX(75vw);
   }
   100% {
     bottom: 100%;
     transform: translateX(100vw);
   }
 }
-/* ---- THREE --- */
-@keyframes up3 {
-  0% {
-    bottom: 0%;
-    transform: translateX(0vw);
-  }
-  25% {
-    bottom: 33%;
-    transform: translateX(50vw);
-  }
-  50% {
-    bottom: 66%;
-    transform: translateX(0vw);
-  }
-  75% {
-    bottom: 90%;
-    transform: translateX(50vw);
-  }
-  100% {
-    bottom: 100%;
-    transform: translateX(0vw);
-  }
-}
-/* ---- FOUR --- */
 
-@keyframes up4 {
+/* ---- group 2 ---- */
+#balls .container .small2:nth-child(1n) {
+  background-color: #afff94;
+  animation: circleCenter 18s infinite;
+}
+#balls .container .small2:nth-child(2n) {
+  background-color: #ffeb94;
+  animation: circleCenter 22s infinite;
+  left: 20px;
+}
+#balls .container .small2:nth-child(3n) {
+  background-color: #ff94ff;
+  animation: circleCenter 26s infinite;
+  left: 40px;
+}
+#balls .container .small2:nth-child(4n) {
+  background-color: #94dbff;
+  animation: circleCenter 30s infinite;
+  left: 60px;
+}
+
+#balls .container .small3:nth-child(1n) {
+  background-color: #ff94ff;
+  animation: circleCenter 34s infinite;
+  left: 140px;
+}
+#balls .container .small3:nth-child(2n) {
+  background-color: #94dbff;
+  animation: circleCenter 28s infinite;
+  left: 80px;
+}
+#balls .container .small3:nth-child(3n) {
+  background-color: #afff94;
+  animation: circleCenter 22s infinite;
+  left: 100px;
+}
+#balls .container .small3:nth-child(4n) {
+  background-color: #ffeb94;
+  animation: circleCenter 16s infinite;
+  left: 120px;
+}
+/* ---- circleCenter --- */
+
+@keyframes circleCenter {
   0% {
     bottom: 0%;
-    transform: translateX(50vw);
+    transform: translateX(0vw);
   }
-  25% {
+  20% {
     bottom: 25%;
-    transform: translateX(0vw);
-  }
-  50% {
-    bottom: 50%;
     transform: translateX(50vw);
   }
-  75% {
+  40% {
+    bottom: 50%;
+    transform: translateX(75vw);
+  }
+  60% {
     bottom: 75%;
-    transform: translateX(0vw);
+    transform: translateX(50vw);
+  }
+  80% {
+    bottom: 50%;
+    transform: translateX(25vw);
   }
   100% {
-    bottom: 100%;
-    transform: translateX(50vw);
+    bottom: 0%;
+    transform: translateX(100vw);
   }
 }
 
@@ -592,76 +599,83 @@ body p {
 /* ---- group 1 ---- */
 #balls .container .medium:nth-child(1n) {
   background-color: #afff94;
-  animation: upMed4 25s infinite;
+  animation: bttmL2topR 31s infinite;
 }
 #balls .container .medium:nth-child(2n) {
   background-color: #ffeb94;
-  animation: upMed 40s infinite;
+  animation: bttmL2topR 45s infinite;
+  left: 20px;
 }
 #balls .container .medium:nth-child(3n) {
   background-color: #ff94ff;
-  animation: upMed2 37s infinite;
+  animation: bttmL2topR 57s infinite;
+  left: 40px;
 }
 #balls .container .medium:nth-child(4n) {
   background-color: #94dbff;
-  animation: upMed1 34s infinite;
-}
-/* ---- group 2 ---- */
-
-#balls .container .medium1:nth-child(1n) {
-  background-color: #ff94ff;
-  animation: upMed1 42s infinite;
-}
-#balls .container .medium1:nth-child(2n) {
-  background-color: #94dbff;
-  animation: upMed2 38s infinite;
-}
-#balls .container .medium1:nth-child(3n) {
-  background-color: #afff94;
-  animation: upMed3 36s infinite;
-}
-#balls .container .medium1:nth-child(4n) {
-  background-color: #ffeb94;
-  animation: upMed4 28s infinite;
+  animation: bttmL2topR 39s infinite;
+  left: 60px;
 }
 
-/* ---- ONE --- */
-@keyframes upMed1 {
+/* ---- from bottom left 2 top right --- */
+@keyframes bttmL2topR {
   0% {
     bottom: 0%;
     transform: translateX(0vw);
   }
   25% {
-    bottom: 40%;
-    transform: translateX(70vw);
-  }
-  50% {
-    bottom: 60%;
-    transform: translateX(0vw);
-  }
-  75% {
-    bottom: 80%;
-    transform: translateX(90vw);
-  }
-  100% {
-    bottom: 100%;
-    transform: translateX(0vw);
-  }
-}
-/* ---- TOW --- */
-
-@keyframes upMed2 {
-  0% {
-    bottom: 0%;
-    transform: translateX(100vw);
-  }
-  25% {
-    bottom: 35%;
-    transform: translateX(10vw);
+    bottom: 25%;
+    transform: translateX(98vw);
   }
   50% {
     bottom: 50%;
-    transform: translateX(100vw);
+    transform: translateX(1vw);
+  }
+  75% {
+    bottom: 75%;
+    transform: translateX(98vw);
+  }
+  100% {
+    bottom: 100%;
+    transform: translateX(1vw);
+  }
+}
+
+/* ---- group 2 ---- */
+#balls .container .medium1:nth-child(1n) {
+  background-color: #ff94ff;
+  animation: bttmR2topL 54s infinite;
+}
+#balls .container .medium1:nth-child(2n) {
+  background-color: #94dbff;
+  animation: bttmR2topL 48s infinite;
+  left: 40px;
+}
+#balls .container .medium1:nth-child(3n) {
+  background-color: #afff94;
+  animation: bttmR2topL 29s infinite;
+  left: 60px;
+}
+#balls .container .medium1:nth-child(4n) {
+  background-color: #ffeb94;
+  animation: bttmR2topL 62s infinite;
+  left: 80px;
+}
+
+/* ---- from bottom right 2 top left --- */
+
+@keyframes bttmR2topL {
+  0% {
+    bottom: 0%;
+    transform: translateX(80vw);
+  }
+  25% {
+    bottom: 35%;
+    transform: translateX(-10vw);
+  }
+  50% {
+    bottom: 50%;
+    transform: translateX(70vw);
   }
   75% {
     bottom: 79%;
@@ -672,51 +686,228 @@ body p {
     transform: translateX(100vw);
   }
 }
-/* ---- THREE --- */
-@keyframes upMed3 {
+
+/* ---- BIG ---- */
+#balls .big,
+#balls .big1 {
+  position: absolute;
+  bottom: -5%;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #333;
+}
+/* ---- group 1 ---- */
+#balls .container .big:nth-child(1n) {
+  background-color: #afff94;
+  animation: bttmLeft2bttmR 90s infinite;
+}
+#balls .container .big:nth-child(2n) {
+  background-color: #94dbff;
+  animation: bttmLeft2bttmR 120s infinite;
+  left: 30px;
+}
+#balls .container .big:nth-child(3n) {
+  background-color: #ffeb94;
+  animation: bttmLeft2bttmR 150s infinite;
+  left: 60px;
+}
+#balls .container .big:nth-child(4n) {
+  background-color: #ff94ff;
+  animation: bttmLeft2bttmR 180s infinite;
+  left: 90px;
+}
+
+/* ---- group 2 ---- */
+
+#balls .container .big1:nth-child(1n) {
+  background-color: #afff94;
+  animation: topR2topL 90s infinite;
+}
+#balls .container .big1:nth-child(2n) {
+  background-color: #94dbff;
+  animation: topR2topL 120s infinite;
+  left: 30px;
+}
+#balls .container .big1:nth-child(3n) {
+  background-color: #ffeb94;
+  animation: topR2topL 150s infinite;
+  left: 60px;
+}
+#balls .container .big1:nth-child(4n) {
+  background-color: #ff94ff;
+  animation: topR2topL 180s infinite;
+  left: 90px;
+}
+
+/* ---- Zigs Zag bottom left 2 bottom right --- */
+@keyframes bttmLeft2bttmR {
   0% {
     bottom: 0%;
     transform: translateX(0vw);
   }
   25% {
-    bottom: 33%;
-    transform: translateX(70vw);
+    bottom: 99%;
+    transform: translateX(25vw);
   }
   50% {
-    bottom: 66%;
-    transform: translateX(0vw);
+    bottom: 0%;
+    transform: translateX(50vw);
   }
   75% {
-    bottom: 90%;
-    transform: translateX(70vw);
+    bottom: 99%;
+    transform: translateX(75vw);
+  }
+  100% {
+    bottom: 0%;
+    transform: translateX(100vw);
+  }
+}
+/* ---- Zigs Zag  top 2 right  top left --- */
+@keyframes topR2topL {
+  0% {
+    bottom: 100%;
+    transform: translateX(90vw);
+  }
+  25% {
+    bottom: 0%;
+    transform: translateX(75vw);
+  }
+  50% {
+    bottom: 100%;
+    transform: translateX(50vw);
+  }
+  75% {
+    bottom: 0%;
+    transform: translateX(25vw);
   }
   100% {
     bottom: 100%;
     transform: translateX(0vw);
   }
 }
-/* ---- FOUR --- */
 
-@keyframes upMed4 {
+/* ---- Giagantic ---- */
+#balls .giagantic {
+  position: absolute;
+  bottom: -5%;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: #333;
+}
+/* ---- group 1 ---- */
+#balls .container .giagantic:nth-child(1n) {
+  background-color: #afff94;
+  animation: giagantic1 200s infinite;
+}
+#balls .container .giagantic:nth-child(2n) {
+  background-color: #94dbff;
+  animation: giagantic2 220s infinite;
+  left: 30px;
+}
+#balls .container .giagantic:nth-child(3n) {
+  background-color: #ffeb94;
+  animation: giagantic3 250s infinite;
+  left: 60px;
+}
+#balls .container .giagantic:nth-child(4n) {
+  background-color: #ff94ff;
+  animation: giagantic4 280s infinite;
+  left: 90px;
+}
+
+/* ---- giagantics --- */
+
+@keyframes giagantic1 {
   0% {
-    bottom: 0%;
-    transform: translateX(50vw);
-  }
-  25% {
-    bottom: 10%;
+    bottom: 30%;
     transform: translateX(0vw);
   }
+  25% {
+    bottom: 90%;
+    transform: translateX(70vw);
+  }
   50% {
-    bottom: 40%;
-    transform: translateX(50vw);
+    bottom: 0%;
+    transform: translateX(100vw);
   }
   75% {
     bottom: 80%;
+    transform: translateX(1vw);
+  }
+  100% {
+    bottom: -10%;
+    transform: translateX(60vw);
+  }
+}
+
+@keyframes giagantic2 {
+  0% {
+    bottom: 0%;
     transform: translateX(0vw);
+  }
+  25% {
+    bottom: 70%;
+    transform: translateX(30vw);
+  }
+  50% {
+    bottom: 50%;
+    transform: translateX(100vw);
+  }
+  75% {
+    bottom: 10%;
+    transform: translateX(40vw);
   }
   100% {
     bottom: 100%;
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes giagantic3 {
+  0% {
+    bottom: 0%;
+    transform: translateX(90vw);
+  }
+  25% {
+    bottom: 60%;
+    transform: translateX(2vw);
+  }
+  50% {
+    bottom: 100%;
+    transform: translateX(30vw);
+  }
+  75% {
+    bottom: 60%;
+    transform: translateX(90vw);
+  }
+  100% {
+    bottom: 0%;
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes giagantic4 {
+  0% {
+    bottom: 0%;
+    transform: translateX(40vw);
+  }
+  25% {
+    bottom: 50%;
+    transform: translateX(80vw);
+  }
+  50% {
+    bottom: 90%;
     transform: translateX(50vw);
+  }
+  75% {
+    bottom: 50%;
+    transform: translateX(20vw);
+  }
+  100% {
+    bottom: -10%;
+    transform: translateX(60vw);
   }
 }
 
