@@ -219,6 +219,10 @@ body p {
     text-decoration: none;
   }
 
+  #header a:hover {
+    background-color: var(--second-main-color);
+  }
+
   #btn-menu {
     display: block;
   }
