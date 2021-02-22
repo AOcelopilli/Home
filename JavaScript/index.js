@@ -1,16 +1,38 @@
+import { showMenu } from "./menu.js";
+import { scrollToTop } from "./scrollToTop.js";
+
 const d = document,
-  $btnContact = d.getElementById("btnContact"),
-  $formSection = d.getElementById("contact"),
+  $header = d.getElementById("header"),
+  $menu = d.getElementById("btn-menu"),
+  $btnToTop = d.getElementById("btnToTop");
+
+d.addEventListener("DOMContentLoaded", (e) => {
+  showMenu($menu, $header);
+});
+
+d.addEventListener("scroll", (e) => {
+  scrollToTop($btnToTop);
+});
+
+window.addEventListener("resize", (e) => {
+  if (window.innerWidth > 600) {
+    $header.classList.remove("none");
+  } else {
+    $header.classList.add("none");
+  }
+});
+
+const $formSection = d.getElementById("contact"),
   $form = d.querySelector(".contact-form"),
   $send = d.querySelector('input[type="submit"]'),
   $contactsInfo = d.querySelectorAll(".contact-info"),
   $labels = d.querySelectorAll(".contact-info label"),
   $inputs = d.querySelectorAll(".contact-form [required]"),
   $loader = d.querySelector(".contact-form-loader"),
-  $response = d.querySelector(".contact-form-response"),
-  $btnToTop = d.getElementById("btnToTop");
+  $response = d.querySelector(".contact-form-response");
 
 /* Text of Labels to Spans */
+
 $labels.forEach((label) => {
   label.innerHTML = label.innerText
     .split("")
@@ -21,32 +43,22 @@ $labels.forEach((label) => {
     .join("");
 });
 
-/* Btn to top */
-d.addEventListener("scroll", (e) => {
-  let scrollY = window.pageYOffset;
-  if (scrollY > 480) {
-    $btnToTop.classList.remove("none");
-  } else {
-    $btnToTop.classList.add("none");
-  }
-});
-
 d.addEventListener("click", (e) => {
-  /* Scroll to Form */
+  // Scroll to Form
   if (e.target.matches(`#btnContact`)) {
     $formSection.scrollIntoView();
   }
 
-  /* Scroll to Top */
+  // Scroll to Top
   if (e.target.matches(`#btnToTop`) || e.target.matches(`#btnToTop *`)) {
-    /* Safari */
+    // Safari
     d.body.scrollTop = 0;
-    /* Resto de navegadores */
+    // Resto de navegadores
     d.documentElement.scrollTop = 0;
   }
 });
 
-/* Form validation */
+// Form validation
 d.addEventListener("keyup", (e) => {
   if (e.target.matches(".contact-form [required]")) {
     let $required = e.target,
@@ -71,7 +83,7 @@ d.addEventListener("keyup", (e) => {
   }
 });
 
-/* Loader and msg  */
+// Send email, efects to Loader and msg
 d.addEventListener("submit", (e) => {
   e.preventDefault();
   //alert("Enviando Formulario");
