@@ -11,4 +11,15 @@ export const scrollToTop = (btnToTop) => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
+
+  window.addEventListener("scroll", (e) => {
+    let scroll = window.pageYOffset,
+      pageWidth = window.innerWidth;
+
+    if (pageWidth > 600 && scroll > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
 };

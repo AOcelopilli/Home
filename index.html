@@ -9,6 +9,7 @@
   <script src="https://kit.fontawesome.com/d3eb4888e7.js" crossorigin="anonymous"></script>
 
   <title>Angel Pineda</title>
+  <meta name="description">
 
   <!-- CDNS -->
 </head>
@@ -17,12 +18,12 @@
   <button id="btn-menu"><i class="fas fa-bars"></i></button>
   <button id="btnToTop" class="none"><i class="fas fa-sort-up"></i></button>
 
-  <header id="header" class="none">
+  <header id="header">
     <nav id="nav-bar">
       <ul>
         <li><a href="https://www.angelpineda.com.mx/"><i class="fas fa-home"></i> Inicio</a></li>
-        <li><a href="https://www.angelpineda.com.mx/"><i class="fas fa-briefcase"></i> Portafolio</a></li>
-        <li><a href="https://www.angelpineda.com.mx/"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <!--  <li><a href="#"><i class="fas fa-briefcase"></i> Portafolio</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contacto</a></li> -->
       </ul>
     </nav>
   </header>
@@ -41,33 +42,44 @@
     <section id="introduction">
       <h2>Sobre mí</h2>
 
-      <img src="assets/images/undrawDeveloper.svg" alt="developer web">
-      <p>Disfruto llevar a cabo la maquetación e interactividad de interfaces web, agregando differentes e interesantes
-        funcionalidades.</p>
+      <div class="">
+        <div class="imgBlock">
+          <img src="assets/images/undrawDeveloper.svg" alt="developer web">
+        </div>
+        <div class="textBlock">
+          <p>Disfruto llevar a cabo la maquetación e interactividad de interfaces web, agregando differentes e
+            interesantes funcionalidades.</p>
 
-      <p>Pienso que cualquier persona o negocio que quiera transmitir un mensaje, lo puede realizar mejor a través de un
-        sitio web o aplicación, me gustaría
-        ayudarlos a comunicar ese mensaje y darles presencia en internet.</p>
+          <p>Pienso que cualquier persona o negocio que quiera transmitir un mensaje, lo puede realizar mejor a través
+            de
+            un
+            sitio web o aplicación, me gustaría
+            ayudarlos a comunicar ese mensaje y darles presencia en internet.</p>
+        </div>
 
+      </div>
 
     </section>
 
     <section id="services">
       <h2>Servicios</h2>
 
-      <div class="card">
-        <h3>Maquetación Web</h3>
-        <p>Llevo diseños web al mundo del internet, creando sitios y agregando elementos para su creación.</p>
+      <div id="cards">
+        <div class="card">
+          <h3>Maquetación Web</h3>
+          <p>Llevo diseños web al mundo del internet, creando sitios y agregando elementos para su creación.</p>
+        </div>
+        <div class="card">
+          <h3>Programación Web</h3>
+          <p>Construyo interesantes funcionalidades y efectos en páginas web a través de la programación.</p>
+        </div>
+        <div class="card">
+          <h3>Posicionamiento en buscadores.</h3>
+          <p>Por sus siglas en inglés <strong>Search Engine Optimization</strong> (SEO) son los resultados en busquedas
+            web.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Programación Web</h3>
-        <p>Construyo interesantes funcionalidades y efectos en páginas web a través de la programación.</p>
-      </div>
-      <div class="card">
-        <h3>Posicionamiento en buscadores.</h3>
-        <p>Por sus siglas en inglés <strong>Search Engine Optimization</strong> (SEO) son los resultados en busquedas
-          web.</p>
-      </div>
+
 
       <div id="balls">
         <div class="container">
@@ -128,7 +140,7 @@
     <section id="technologies">
       <h2>Tecnologías</h2>
 
-      <div id="techs">
+      <div id="techs" class="grid-responsive">
 
         <div class="tech html">
           <img src="assets/icons/html.svg" alt="html">
