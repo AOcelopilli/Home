@@ -4,7 +4,8 @@
 :root {
   /* buttons, main title, navbar */
   --main-color: #f5df4d;
-  --main-modal-color: #f3d92c;
+  --main-light-color: #fcf3bf;
+  --main-dark-color: #f3d92c;
   /* titles, subtitles */
   --secondary-color: #0002b4;
   --secondary-modal-color: #632ad3;
@@ -30,16 +31,41 @@
 html {
   font-family: "Manrope", sans-serif;
   font-size: 16px;
+  color: var(--text-color);
 }
 
 body {
   position: relative;
+  font-size: calc(1rem + 1vw);
   width: 100vw;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h2 {
+  color: var(--secondary-color);
+  font-size: calc(2rem + 1vw);
+}
+
+p {
+  width: 80%;
+}
+hr {
+  border: thin solid var(--text-light-color);
+  border-radius: 1rem;
+  margin: 0 auto;
+  width: 80%;
 }
 
 /* Nav bar */
 #navbar {
-  background-color: var(--main-modal-color);
+  background-color: var(--main-dark-color);
   bottom: 0;
   display: flex;
   justify-content: space-around;
@@ -57,7 +83,7 @@ body {
   text-decoration: none;
 }
 
-#navbar a:first-child {
+#navbar a.active {
   color: var(--dark-color);
 }
 
@@ -66,24 +92,61 @@ body {
   position: fixed;
   right: 1vw;
   bottom: calc(50px + 1vh);
-  background-color: var(--main-color);
+  background-color: var(--main-light-color);
   border: none;
   box-shadow: 0 0px 4px var(--dark-color), 2px 4px 6px var(--dark-light-color);
   border-radius: 50%;
   width: calc(50px + 1vw);
   height: calc(50px + 1vw);
+  transition: background-color 0.3s ease;
 }
 
-.btn-top::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -75%);
-  height: 0;
-  width: 0;
-  border-bottom: 20px solid var(--dark-light-color);
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
+.btn-top.active {
+  background-color: var(--main-color);
+}
+
+.btn-top span {
+  font-size: 2.5rem;
+  color: var(--dark-light-color);
+  transition: color 0.3s ease;
+}
+
+.btn-top.active span {
+  color: var(--dark-color);
+}
+
+/* Welcome */
+.welcome {
+  text-align: center;
+}
+
+.welcome span {
+  font-size: calc(1.5rem + 1vw);
+}
+
+.welcome h1 {
+  color: var(--main-color);
+  font-size: calc(3rem + 1vw);
+  margin: 1rem auto;
+  font-family: "Dancing Script", sans-serif;
+}
+
+.welcome h2 {
+  color: var(--text-dark-color);
+  font-size: calc(2rem + 1vw);
+}
+
+.welcome p {
+  font-size: calc(1rem + 1vw);
+  margin-bottom: 1rem;
+}
+
+.about button {
+  height: 2rem;
+  width: 6rem;
   border-radius: 0.5rem;
+  background-color: var(--main-light-color);
+  border: none;
+  box-shadow: 0 2px 4px var(--dark-color), 0 3px 6px var(--dark-light-color);
+  color: var(--text-color);
 }
