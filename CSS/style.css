@@ -5,10 +5,11 @@
   /* buttons, main title, navbar */
   --main-color: #f5df4d;
   --main-light-color: #fcf3bf;
-  --main-dark-color: #f3d92c;
+  --main-dark-color: #f1c728;
   /* titles, subtitles */
-  --secondary-color: #0002b4;
-  --secondary-modal-color: #632ad3;
+  --secondary-color: #4d63f5;
+  --secondary-light-color: #7281f7;
+  --secondary-dark-color: #1a45f0;
   /* text */
   --text-color: #939597;
   --text-light-color: #dadada;
@@ -55,6 +56,7 @@ h2 {
 
 p {
   width: 80%;
+  margin: 0 auto;
 }
 hr {
   border: thin solid var(--text-light-color);
@@ -90,7 +92,7 @@ hr {
 /* TOP button */
 .btn-top {
   position: fixed;
-  right: 1vw;
+  right: calc(50px + 1.2vw);
   bottom: calc(50px + 1vh);
   background-color: var(--main-light-color);
   border: none;
@@ -132,7 +134,7 @@ hr {
 }
 
 .welcome h2 {
-  color: var(--text-dark-color);
+  color: var(--text-light-color);
   font-size: calc(2rem + 1vw);
 }
 
@@ -149,4 +151,50 @@ hr {
   border: none;
   box-shadow: 0 2px 4px var(--dark-color), 0 3px 6px var(--dark-light-color);
   color: var(--text-color);
+  font-weight: bold;
+}
+
+.app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  font-size: calc(1rem + 1vw);
+  margin: 1rem auto;
+}
+
+.app * {
+  margin-top: calc(0.5rem + 0.5vh);
+}
+
+.app img {
+  width: 100%;
+  height: auto;
+}
+
+.app h3 {
+  font-size: calc(1.5rem + 1vw);
+  color: var(--main-dark-color);
+}
+
+.btns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 50px;
+}
+
+.btns a {
+  border-radius: 0.5rem;
+  background-color: var(--main-light-color);
+  border: none;
+  box-shadow: 0 2px 4px var(--dark-color), 0 3px 6px var(--dark-light-color);
+  color: var(--text-color);
+  font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  width: 6rem;
 }
