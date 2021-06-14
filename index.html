@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d3eb4888e7.js" crossorigin="anonymous"></script>
 
   <meta name="description"
     content="Desarrollador frontend Angel Pineda, creación de páginas web, ajustes y programación de funcionalidades.">
@@ -20,21 +21,21 @@
     </span></button>
 
   <nav id="navbar">
-    <a href="#" class="active"> <span class="material-icons-round">
+    <a href="#welcome" class="active"> <span class="material-icons-round">
         home
       </span>Inicio</a>
-    <a href="#"><span class="material-icons-round">
+    <a href="#about"><span class="material-icons-round">
         account_circle
       </span> Acerca de mí</a>
-    <a href="#"><span class="material-icons-round">
+    <a href="#portfolio"><span class="material-icons-round">
         work
       </span> Portafolio</a>
-    <a href="#"><span class="material-icons-round">
+    <a href="#contact"><span class="material-icons-round">
         email
       </span> Contacto</a>
   </nav>
 
-  <section class="welcome">
+  <section id="welcome" data-scroll class="welcome">
     <div class="title">
       <span>¡Hola! Bienvenido a mi página, soy </span>
       <h1>Angel Pineda</h1>
@@ -44,20 +45,27 @@
     <p>Maquetación de páginas web, ajustes y programación de funcionalidades.</p>
   </section>
   <hr>
-  <section class="about">
+  <section id="about" data-scroll class="about">
     <h2>Acerca de mí</h2>
-    <p>Me gusta la programación, actualmente la desempeño a traés de la creación de páginas web, maquetando diseños y
+    <p>Me gusta la programación, actualmente la desempeño a través de la creación de páginas web, maquetando diseños y
       programando los diferentes elementos de las interacciones de los sitios web.</p>
     <p>
       Creo que cualquier persona o negocio que necesite transmitir un mensaje, lo puede realizar mejor a tráves de un
       sitio web o aplicación, me gustaria ayudarlos a transmitir su mensaje y darles presencia en internet.
     </p>
 
-    <button>Descargar CV</button>
+    <button id="btn-cv">Descargar CV</button>
+
+    <div id="btn-modal-cvs">
+      <a href="https://drive.google.com/file/d/1yz2s2Nm6UC4K7wGa30ZuJje14wrVIHAT/view?usp=sharing" target="_blank"
+        download class="cv-link">Español</a>
+      <a href="https://drive.google.com/file/d/1QEWOMU0p-HmctLngQgANz3MWJLzj_NJ9/view?usp=sharing" target="_blank"
+        download class="cv-link">Engish</a>
+    </div>
     <hr>
   </section>
 
-  <section class="portfolio">
+  <section id='portfolio' data-scroll class="portfolio">
     <h2>Portafolio</h2>
     <div class="app">
       <h3>Calc App</h3>
@@ -86,26 +94,45 @@
   </section>
   <hr>
 
-  <section class="contact">
+  <section id="contact" data-scroll class="contact">
     <h2>Contacto</h2>
     <form>
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" id="name">
-      <label for="correo">Correo</label>
-      <input type="text" name="correo" id="email">
-      <label for="asunto">Asunto</label>
-      <input type="text" name="asunto" id="issue">
-      <label for="comentarios">Comentarios</label>
-      <textarea name="comentarios" id="comments" cols="30" rows="5"></textarea>
+      <div class="form-control">
+        <label for="name">Nombre</label>
+        <input type="text" name="nombre" id="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required
+          title="El nombre solo puede contener letras">
+      </div>
+      <div class="form-control">
+        <label for="email">Correo</label>
+        <input type="text" name="correo" id="email"
+          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+          title="Correo acepta letras, numeros y simbolos" required>
+      </div>
+
+      <div class="form-control">
+        <label for="issue">Asunto</label>
+        <input type="text" name="asunto" id="issue" title="El asunto es necesario" required>
+      </div>
+
+      <div class="form-control">
+        <label for="comments">Comentarios</label>
+        <textarea name="comentarios" id="comments" cols="30" rows="5"
+          title="Tu comentario no debe exceder los 255 caracteres" data-patter="^.{1,255}$" required></textarea>
+      </div>
+      <input type="submit" value="Enviar">
     </form>
     <hr>
   </section>
   <footer>
-    <a href="#" target="blank"> LinkedIn</a>
-    <a href="#" target="blank">Twitter</a>
-    <a href="#" target="blank">Github</a>
-    <span>Querétaro, México</span>
+    <a href="https://www.linkedin.com/in/aocelopilli
+" target="blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://twitter.com/AOcelopilli" target="blank"><i class="fab fa-twitter-square"></i> Twitter</a>
+    <a href="https://github.com/AOcelopilli" target="blank"><i class="fab fa-github-square"></i> Github</a>
+    <span> <span class="material-icons-round">
+        location_on
+      </span> Querétaro, México</span>
   </footer>
+  <script src="JavaScript/main.js"></script>
 </body>
 
 </html>
