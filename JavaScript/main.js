@@ -2,7 +2,8 @@ const d = document,
   $btnCV = d.getElementById("btn-cv"),
   $btnModalCVs = d.getElementById("btn-modal-cvs"),
   $form = d.getElementsByName("form"),
-  $btnToTop = d.getElementById("btn-top");
+  $btnToTop = d.getElementById("btn-top"),
+  $iconsAwesome = d.getElementsByClassName("fab");
 
 d.addEventListener("click", (e) => {
   if (e.target == $btnCV) {
@@ -30,5 +31,15 @@ window.addEventListener("scroll", (e) => {
     $btnToTop.classList.add("active");
   } else {
     $btnToTop.classList.remove("active");
+  }
+
+  if (pageWidth > 700) {
+    Array.from($iconsAwesome).forEach((icon) => {
+      icon.classList.add("fa-2x");
+    });
+  } else {
+    Array.from($iconsAwesome).forEach((icon) => {
+      icon.classList.remove("fa-2x");
+    });
   }
 });

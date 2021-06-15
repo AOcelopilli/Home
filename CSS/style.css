@@ -39,10 +39,10 @@ html {
 }
 
 body {
-  position: relative;
-  font-size: calc(1rem + 1vw);
-  width: 100%;
   background-color: var(--white);
+  font-size: calc(1rem + 1vw);
+  position: relative;
+  width: 100%;
 }
 
 section {
@@ -50,18 +50,27 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-top: 1rem;
   min-height: 80vh;
+  width: 100%;
 }
 
 h2 {
   color: var(--secondary-color);
   font-size: calc(2rem + 1vw);
+  margin: calc(1rem + 0.5vh) auto;
+}
+
+h3 {
+  color: var(--main-dark-color);
+  font-size: calc(1.5rem + 1vw);
+  margin: calc(1rem + 0.5vh) auto;
 }
 
 p {
   width: 80%;
   margin: 0 auto;
-  margin-top: calc(0.2rem + 0.5vh);
+  margin: calc(1rem + 0.5vh) auto;
 }
 
 a {
@@ -70,12 +79,15 @@ a {
   border: none;
   box-shadow: 0 2px 4px var(--dark-color), 0 3px 6px var(--dark-light-color);
   color: var(--text-color);
-  font-size: calc(1rem + 0.5vw);
-  font-weight: bold;
-  text-decoration: none;
+  font-size: calc(1rem + 0.2vw);
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
   width: calc(6rem + 0.5rem);
+}
+
+ul {
+  font-size: calc(0.8rem + 0.5vw);
 }
 
 hr {
@@ -96,7 +108,7 @@ hr {
   justify-content: space-evenly;
   position: fixed;
   width: 100%;
-  z-index: 999;
+  z-index: 800;
 }
 
 #navbar a {
@@ -108,10 +120,6 @@ hr {
   background: transparent;
   box-shadow: 0 0 0 transparent;
   width: auto;
-}
-
-#navbar a.active {
-  color: var(--dark-color);
 }
 
 /* TOP button */
@@ -127,7 +135,7 @@ hr {
   height: calc(3rem + 1vw);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   visibility: hidden;
-  z-index: 900;
+  z-index: 800;
 }
 
 #btn-top:active {
@@ -150,32 +158,32 @@ hr {
 }
 
 /* === Welcome === */
-.welcome {
+#welcome {
   text-align: center;
 }
 
-.welcome span {
+#welcome span {
   font-size: calc(1.5rem + 1vw);
 }
 
-.welcome h1 {
+#welcome h1 {
   color: var(--main-color);
   font-size: calc(3rem + 1vw);
   margin: 1rem auto;
   font-family: "Dancing Script", sans-serif;
 }
 
-.welcome h2 {
+#welcome h2 {
   color: var(--text-light-color);
   font-size: calc(2rem + 0.5vw);
 }
 
-.welcome img {
-  width: 60%;
+#welcome img {
+  width: 40%;
   height: auto;
 }
 
-.welcome p {
+#welcome p {
   font-size: calc(1rem + 1vw);
   margin-bottom: 1rem;
 }
@@ -217,7 +225,7 @@ hr {
   top: 0;
   position: fixed;
   width: 100vw;
-  z-index: 800;
+  z-index: 900;
 }
 
 @keyframes opacity100 {
@@ -267,21 +275,17 @@ hr {
 }
 
 .app img {
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 
-.app h3 {
-  font-size: calc(1.5rem + 1vw);
-  color: var(--main-dark-color);
-}
-
 .btns {
-  display: flex;
   align-items: flex-start;
+  display: flex;
   justify-content: space-around;
-  width: 100%;
+  margin-top: 1rem;
   min-height: 50px;
+  width: 100%;
 }
 
 /* Contact */
@@ -298,12 +302,17 @@ form {
 .form-control {
   position: relative;
   width: 100%;
-  height: calc(14vh + 1vh);
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: calc(0.5rem + 0.5vh) auto;
+}
+
+.form-control label {
+  margin: 0 auto;
+  font-size: calc(1.5rem + 0.5vw);
 }
 
 input[type="text"],
@@ -318,11 +327,15 @@ textarea {
   font-size: calc(1rem + 0.5vw);
   outline: none;
   padding: 0.5rem 1rem;
-  min-height: 35px;
+  height: calc(45px + 1vh);
   resize: none;
   text-align: center;
   transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   width: 100%;
+}
+
+textarea {
+  height: 10vh;
 }
 
 input[type="text"]:focus,
@@ -337,6 +350,7 @@ textarea:valid {
 
 input[type="submit"] {
   margin-top: 2rem;
+  width: 60%;
 }
 
 /*  === Footer === */
@@ -350,16 +364,17 @@ footer {
 }
 
 footer > * {
-  margin-top: calc(0.5rem + 0.5vh);
+  margin-top: 0;
 }
 
 footer a {
   color: var(--text-color);
   background-color: transparent;
   box-shadow: 0 0 0 transparent;
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.5rem + 1vw);
   transition: color 0.3s ease;
   text-decoration: none;
+  width: 50%;
 }
 
 footer > span {
@@ -380,16 +395,14 @@ footer a:hover {
   #navbar {
     align-items: center;
     background-color: transparent;
-    bottom: 50%;
+    top: 30%;
     right: 1%;
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 400px;
     justify-content: space-evenly;
     position: fixed;
-    transform: translateY(50%);
     width: auto;
-    z-index: 999;
   }
 
   #navbar a {
@@ -411,7 +424,7 @@ footer a:hover {
 
   #navbar .material-icons-round {
     transform: scale(2);
-    padding-top: 0.5rem;
+    padding-top: calc(0.3rem + 0.2vh);
   }
 
   #navbar a:active {
@@ -422,5 +435,105 @@ footer a:hover {
 
   .app {
     width: 80%;
+  }
+
+  .app .description {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .app .description ul {
+    list-style-position: inside;
+    padding: 0 calc(0.5rem + 0.5vw);
+  }
+
+  footer .material-icons-round {
+    transform: scale(1.2);
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  #navbar {
+    align-items: center;
+    background-color: var(--main-dark-color);
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    height: calc(2rem + 1vh);
+    justify-content: space-evenly;
+    position: fixed;
+    transform: translateY(0);
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 100%;
+  }
+
+  #navbar a {
+    align-items: center;
+    background-color: transparent;
+    box-shadow: 0 0 0 transparent;
+    color: var(--dark-light-color);
+    display: inline-flex;
+    flex-direction: row;
+    font-size: 1rem;
+    justify-content: space-around;
+    text-decoration: none;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
+    padding: 0.5rem;
+  }
+
+  #navbar a:active {
+    color: var(--white-color);
+  }
+
+  #navbar .material-icons-round {
+    transform: scale(2);
+    padding: 0 calc(0.5rem + 0.1vh);
+  }
+
+  #welcome {
+    margin-top: calc(3rem + 0.5vh);
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, auto));
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .form-control {
+    display: inline;
+    position: static;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: calc(0.5rem + 0.5vh) auto;
+  }
+
+  .form-control label {
+    margin: 0 auto;
+    font-size: calc(1.5rem + 0.5vw);
+  }
+  input[type="submit"] {
+    grid-column: span 2;
+    width: 50%;
   }
 }
