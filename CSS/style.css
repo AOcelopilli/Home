@@ -371,7 +371,7 @@ footer a {
   color: var(--text-color);
   background-color: transparent;
   box-shadow: 0 0 0 transparent;
-  font-size: calc(0.5rem + 1vw);
+  font-size: calc(1rem + 1vw);
   transition: color 0.3s ease;
   text-decoration: none;
   width: 50%;
