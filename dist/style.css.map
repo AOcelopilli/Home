@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/buttons.scss","style.css"],"names":[],"mappings":"AAAA,KACE,mBAAA,CAEA,cAAA,CADA,oCCEF","file":"style.css","sourcesContent":[".btn {\n  border-radius: 0.5rem;\n  transition: background-color 0.3s ease;\n  cursor: pointer;\n}\n",".btn {\n  border-radius: 0.5rem;\n  transition: background-color 0.3s ease;\n  cursor: pointer;\n}"]}
