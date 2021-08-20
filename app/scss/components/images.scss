@@ -1,0 +1,11 @@
+.circle-img {
+  width: 80%;
+  max-width: 350px;
+  border-radius: 50%;
+}
+
+.square-img {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: calc(0.2rem + 0.5vw);
+}

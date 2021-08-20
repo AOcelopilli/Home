@@ -1,0 +1,23 @@
+.inline-list {
+  list-style: none;
+  padding: 1rem;
+
+  li {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+  }
+}
+
+.bullet-list {
+  text-align: left;
+  margin: 0 auto;
+  list-style: none;
+
+  li::before {
+    content: "\2022";
+    color: var(--white-yellow);
+    display: inline-block;
+    width: 1rem;
+    margin-left: 1rem;
+  }
+}

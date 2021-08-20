@@ -29,10 +29,6 @@
   <link rel="apple-touch-icon"
     href="https://raw.githubusercontent.com/AOcelopilli/Home/6faa54b30ac7ec7f0d638536e87db71f36cf6f84/assets/logo/Logo.svg">
 
-
-
-
-
   <title>Desarrollador Frontend - Angel Pineda</title>
 
   <script src="https://kit.fontawesome.com/d3eb4888e7.js" crossorigin="anonymous"></script>
@@ -58,67 +54,114 @@
       </span> Contacto</a>
   </nav>
 
-  <section id="welcome" data-scroll class="welcome">
-    <div class="title">
-      <span>¡Hola! Bienvenido a mi página, soy </span>
-      <h1>Angel Pineda</h1>
-      <h2>Programador Frontend</h2>
-    </div>
-    <img
-      src="https://raw.githubusercontent.com/AOcelopilli/Home/6faa54b30ac7ec7f0d638536e87db71f36cf6f84/assets/images/programador.svg"
-      alt="programador">
-    <p>Maquetación de páginas web, ajustes y programación de funcionalidades.</p>
-  </section>
-  <hr>
-  <section id="about" data-scroll class="about">
-    <h2>Acerca de mí</h2>
-    <p>Me gusta la programación, actualmente la desempeño a través de la creación de páginas web, maquetando diseños y
-      programando los diferentes elementos de las interacciones de los sitios web.</p>
-    <p>
-      Creo que cualquier persona o negocio que desee comunicar un mensaje, lo puede realizar mejor a través de un
-      sitio web o aplicación, me gustaría ayudarlos a transmitir su mensaje y darles presencia en internet.
-    </p>
-
-    <p>Soy Mexicano 🇲🇽, soy Guerrerense 🐆, soy programador 💻.</p>
-
-    <button id="btn-cv">Descargar CV</button>
-
-    <div id="btn-modal-cvs">
-      <a href="https://drive.google.com/file/d/1yz2s2Nm6UC4K7wGa30ZuJje14wrVIHAT/view?usp=sharing" target="_blank"
-        download class="cv-link">Español</a>
-      <a href="https://drive.google.com/file/d/1QEWOMU0p-HmctLngQgANz3MWJLzj_NJ9/view?usp=sharing" target="_blank"
-        download class="cv-link">Engish</a>
-    </div>
-    <hr>
-  </section>
-
-  <section id='portfolio' data-scroll class="portfolio">
-    <h2>Portafolio</h2>
-    <div class="app">
-      <h3>Calc App</h3>
-      <p>Calculadora propuesta por <strong>Frontend Mentor</strong> con cambio de tema.</p>
-
-      <img src="https://media.giphy.com/media/4nUKZoI1DhaZuT9RUx/giphy.gif">
+  <section id="welcome" data-scroll class="text-center">
+    <p class="greeting">¡Bienvenidos! soy </p>
+    <div class="grid-1-2 ">
+      <div>
+        <img src="assets/images/profile-picture.jpeg" alt="A picture of me" class="circle-img">
+        <h1>Angel Pineda</h1>
+      </div>
 
       <div class="description">
-        <ul>
-          <h4>Características.</h4>
-          <li>Números con formato</li>
-          <li>UI intuitiva</li>
-          <li>Guarda el estado de la app</li>
-          <li>Guarda el tema seleccionado</li>
-        </ul>
-
-        <ul>
-          <h4>Tecnologías</h4>
-          <li>HTML</li>
-          <li>CSS: Sass</li>
-          <li>Vanilla JavaScript</li>
+        <h2 class="job-title">Desarrollador Frontend</h2>
+        <p>Me especializo en el lenguaje de programación JavaScript trabajando en conjunto de librerias, frameworks y
+          otras
+          herramientas para crear aplicaciones web.</p>
+        <ul class="inline-list">
+          <li><a href="#" class="social-media-link"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#" class="social-media-link"><i class="fab fa-twitter-square"></i></a></li>
+          <li><a href="#" class="social-media-link"><i class="fab fa-github-square"></i></a></li>
         </ul>
       </div>
-      <div class="btns">
-        <a href="https://aocelopilli.github.io/calculator-app-fontend-mentor/" target="_blank">Visitar</a>
-        <a href="https://github.com/AOcelopilli/calculator-app-fontend-mentor" target="_blank">Código</a>
+    </div>
+    <button class="btn outline-btn">Contactar</button>
+  </section>
+
+  <hr>
+
+  <section id="about" data-scroll class="about text-center">
+    <h2>Acerca de mí</h2>
+    <div>
+      <p>Me gusta la programación, actualmente la desempeño a través de la creación de páginas web, maquetando diseños y
+        programando los diferentes elementos de las interacciones de los sitios web.</p>
+
+      <p class="text-center">Mexicano 🇲🇽 Guerrerense 🐆 Programador 💻.
+      </p>
+    </div>
+
+    <div class="skills grid-1-2">
+      <div>
+        <h3>Habilidades Técnicas</h3>
+        <ul class="bullet-list">
+          <li>JavaScript</li>
+          <li>Sass</li>
+          <li>Git</li>
+          <li>npm</li>
+          <li>React js</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Habilidades Sociales</h3>
+        <ul class="bullet-list">
+          <li>Autodidacta</li>
+          <li>Creativdad</li>
+          <li>Empatía</li>
+          <li>Organización</li>
+          <li>Liderazgo</li>
+        </ul>
+      </div>
+    </div>
+
+    <button id="btn-cv" class="btn solid-btn"><i class="far fa-file-alt"></i> Resumen</button>
+
+    <div id="modal-cv" class="modal">
+      <a href="https://drive.google.com/file/d/1yz2s2Nm6UC4K7wGa30ZuJje14wrVIHAT/view?usp=sharing" target="_blank"
+        download class="btn solid-btn">Español</a>
+      <a href="https://drive.google.com/file/d/1QEWOMU0p-HmctLngQgANz3MWJLzj_NJ9/view?usp=sharing" target="_blank"
+        download class="btn solid-btn">English</a>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id='portfolio' data-scroll class="text-center">
+    <h2>Portafolio</h2>
+    <p>Los siguientes son proyectos que me han ayudado a mejorar mis habilidades de maquetación y lógica de
+      programación.</p>
+    <div class=" app">
+      <h3>Calc App</h3>
+      <div class="grid-1-2">
+        <p>Calculadora propuesta por <strong>Frontend Mentor</strong> con cambio de tema.</p>
+
+        <img src="https://media.giphy.com/media/4nUKZoI1DhaZuT9RUx/giphy.gif" class="square-img">
+      </div>
+
+      <div class="grid-1-2">
+        <div>
+          <h4>Características.</h4>
+          <ul class="bullet-list">
+            <li>Números con formato</li>
+            <li>UI intuitiva</li>
+            <li>Guarda el estado de la app</li>
+            <li>Guarda el tema seleccionado</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Tecnologías</h4>
+          <ul class="bullet-list">
+            <li>HTML</li>
+            <li>CSS: Sass</li>
+            <li>Vanilla JavaScript</li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn-container">
+        <a href="https://aocelopilli.github.io/calculator-app-fontend-mentor/" target="_blank"
+          class="btn solid-btn">Visitar</a>
+        <a href="https://github.com/AOcelopilli/calculator-app-fontend-mentor" target="_blank"
+          class="btn solid-btn">Código</a>
       </div>
     </div>
   </section>
@@ -151,8 +194,8 @@
       </div>
       <input type="submit" value="Enviar">
     </form>
-    <hr>
   </section>
+  <hr>
   <footer>
     <a href="https://www.linkedin.com/in/aocelopilli
 " target="blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -162,7 +205,7 @@
         location_on
       </span> Querétaro, México</span>
   </footer>
-  <script src="JavaScript/main.js"></script>
+  <script src="dist/script.js"></script>
 </body>
 
 </html>

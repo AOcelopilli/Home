@@ -1,5 +1,45 @@
+@use '../globals/boilerplate.scss' as *;
+
 .btn {
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
+  background-color: transparent;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0px 2px 10px var(--main-dark);
+  color: var(--dark-gray);
   cursor: pointer;
+  font-family: $font-baloo;
+  font-size: calc(1.25rem + 1vw);
+  font-weight: bolder;
+  outline: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in,
+    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  min-width: 20%;
+  max-width: 150%;
+}
+
+.outline-btn {
+  border: thin solid var(--main-blue);
+  color: var(--main-blue);
+
+  &:hover {
+    background-color: var(--main-blue);
+    color: var(--main-white);
+  }
+
+  &:active {
+    background-color: var(--main-blue);
+    box-shadow: 0 0 5px var(--main-dark);
+    color: var(--main-white);
+    transform: scale(0.95);
+  }
+}
+
+.solid-btn {
+  background: var(--main-yellow);
+  padding: 0.5rem 2rem;
+
+  &:hover {
+    background-color: var(--white-yellow);
+  }
 }

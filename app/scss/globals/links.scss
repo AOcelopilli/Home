@@ -1,0 +1,13 @@
+a {
+  text-decoration: none;
+}
+
+.social-media-link {
+  color: var(--white-gray);
+  font-size: calc(3rem + 1vw);
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--dark-gray);
+  }
+}

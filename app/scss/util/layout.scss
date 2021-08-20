@@ -1,0 +1,17 @@
+.grid-1-2 {
+  display: grid;
+  place-items: start center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
