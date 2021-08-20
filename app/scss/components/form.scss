@@ -1,0 +1,34 @@
+@use '../globals/boilerplate.scss' as *;
+
+label {
+  font-size: 1.2rem;
+  font-family: $font-baloo;
+  color: var(--dark-gray);
+  font-weight: bold;
+  padding: 0 1rem 0.5rem;
+  min-width: 150px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border: thin solid var(--main-blue);
+  border-radius: 0.75rem;
+  outline: none;
+  padding: 1rem 0 1rem 2rem;
+  min-width: 35vw;
+  transition: border 0.5s ease-out;
+
+  &:valid {
+    border: thick solid #2ecc71;
+  }
+
+  &:focus {
+    border: thick solid var(--white-blue);
+  }
+}
+
+textarea {
+  border-radius: 1rem;
+  min-height: 100px;
+}

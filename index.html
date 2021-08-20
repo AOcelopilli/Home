@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <button id="btn-top"><span class="material-icons-round">
+  <!--  <button id="btn-top"><span class="material-icons-round">
       arrow_upward
     </span></button>
 
@@ -52,30 +52,35 @@
     <a href="#contact"><span class="material-icons-round">
         email
       </span> Contacto</a>
-  </nav>
+  </nav> -->
 
-  <section id="welcome" data-scroll class="text-center">
-    <p class="greeting">¡Bienvenidos! soy </p>
-    <div class="grid-1-2 ">
+  <main id="welcome" data-scroll class="text-center">
+    <p class="greeting">¡Bienvenidos! <br> soy </p>
+    <div class="grid-1-2">
       <div>
         <img src="assets/images/profile-picture.jpeg" alt="A picture of me" class="circle-img">
         <h1>Angel Pineda</h1>
       </div>
 
-      <div class="description">
+      <div>
         <h2 class="job-title">Desarrollador Frontend</h2>
         <p>Me especializo en el lenguaje de programación JavaScript trabajando en conjunto de librerias, frameworks y
           otras
           herramientas para crear aplicaciones web.</p>
         <ul class="inline-list">
-          <li><a href="#" class="social-media-link"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="#" class="social-media-link"><i class="fab fa-twitter-square"></i></a></li>
-          <li><a href="#" class="social-media-link"><i class="fab fa-github-square"></i></a></li>
+
+
+
+          <li><a href="https://twitter.com/AOcelopilli" target="blank"><i class="fab fa-twitter-square"></i> Twitter</a>
+          </li>
+          <li><a href="https://github.com/AOcelopilli" target="blank"><i class="fab fa-github-square"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/aocelopilli" target="blank"><i class="fab fa-linkedin"></i>
+              LinkedIn</a></li>
         </ul>
       </div>
     </div>
-    <button class="btn outline-btn">Contactar</button>
-  </section>
+    <a href="#contact" class="btn outline-btn">Contactar</a>
+  </main>
 
   <hr>
 
@@ -129,7 +134,7 @@
     <h2>Portafolio</h2>
     <p>Los siguientes son proyectos que me han ayudado a mejorar mis habilidades de maquetación y lógica de
       programación.</p>
-    <div class=" app">
+    <div class="app">
       <h3>Calc App</h3>
       <div class="grid-1-2">
         <p>Calculadora propuesta por <strong>Frontend Mentor</strong> con cambio de tema.</p>
@@ -158,52 +163,51 @@
         </div>
       </div>
       <div class="btn-container">
-        <a href="https://aocelopilli.github.io/calculator-app-fontend-mentor/" target="_blank"
-          class="btn solid-btn">Visitar</a>
-        <a href="https://github.com/AOcelopilli/calculator-app-fontend-mentor" target="_blank"
-          class="btn solid-btn">Código</a>
+        <a href="https://aocelopilli.github.io/calculator-app-fontend-mentor/" target="_blank">Visitar</a>
+        <a href="https://github.com/AOcelopilli/calculator-app-fontend-mentor" target="_blank">Código</a>
       </div>
     </div>
   </section>
   <hr>
 
-  <section id="contact" data-scroll class="contact">
+  <section id="contact" data-scroll class="text-center">
     <h2>Contacto</h2>
-    <form target="_blank" action="https://formsubmit.co/angeljpa95@gmail.com" method="POST">
-      <div class="form-control">
+    <br>
+    <form action="https://formsubmit.co/angeljpa95@gmail.com" method="POST">
+
+      <div class="flex-1-2">
         <label for="name">Nombre</label>
         <input type="text" name="nombre" id="name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required
           title="El nombre solo puede contener letras">
       </div>
-      <div class="form-control">
+      <div class="flex-1-2">
         <label for="email">Correo</label>
-        <input type="text" name="correo" id="email"
+        <input type="email" name="correo" id="email"
           pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
           title="Correo acepta letras, numeros y simbolos" required>
       </div>
 
-      <div class="form-control">
+      <div class="flex-1-2">
         <label for="issue">Asunto</label>
         <input type="text" name="asunto" id="issue" title="El asunto es necesario" required>
       </div>
 
-      <div class="form-control">
+      <div class="flex-1-2">
         <label for="comments">Comentarios</label>
         <textarea name="comentarios" id="comments" title="Tu comentario no debe exceder los 255 caracteres"
           data-patter="^.{1,255}$" required></textarea>
       </div>
-      <input type="submit" value="Enviar">
+
+      <input type="submit" value="Enviar" class="btn solid-btn">
     </form>
   </section>
   <hr>
   <footer>
-    <a href="https://www.linkedin.com/in/aocelopilli
-" target="blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://twitter.com/AOcelopilli" target="blank"><i class="fab fa-twitter-square"></i> Twitter</a>
     <a href="https://github.com/AOcelopilli" target="blank"><i class="fab fa-github-square"></i> Github</a>
-    <span> <span class="material-icons-round">
-        location_on
-      </span> Querétaro, México</span>
+    <a href="https://twitter.com/AOcelopilli" target="blank"><i class="fab fa-twitter-square"></i> Twitter</a>
+    <a href="https://www.linkedin.com/in/aocelopilli
+    " target="blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <span>
   </footer>
   <script src="dist/script.js"></script>
 </body>

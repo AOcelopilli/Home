@@ -1,0 +1,12 @@
+@mixin flex-col($bp) {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+
+  @media screen and (max-width: $bp) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}

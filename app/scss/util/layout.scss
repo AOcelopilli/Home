@@ -1,8 +1,10 @@
+@use '../util/mixins.scss' as *;
+
 .grid-1-2 {
   display: grid;
-  place-items: start center;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  margin-bottom: 2rem;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 1rem;
 }
 
 .text-center {
@@ -13,5 +15,15 @@
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+}
+
+.flex-1-2 {
+  @include flex-col(560px);
+  margin-bottom: 1rem;
+}
+
+.greeting {
+  line-height: 3rem;
+  font-weight: bolder;
 }

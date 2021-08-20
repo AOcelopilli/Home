@@ -1,5 +1,24 @@
+@use '../globals/boilerplate.scss' as *;
+
 a {
-  text-decoration: none;
+  color: var(--dark-gray);
+  font-family: $font-baloo;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+  transition: color 0.4s ease, border 0.3s ease-out;
+
+  &:hover {
+    color: var(--main-yellow);
+  }
+
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
 
 .social-media-link {
