@@ -4,7 +4,7 @@
   background-color: transparent;
   border: none;
   border-radius: 1rem;
-  box-shadow: 0px 2px 10px var(--modal-dark);
+  box-shadow: 0px 2px 6px var(--modal-dark);
   color: var(--dark-gray);
   cursor: pointer;
   font-family: $font-baloo;
@@ -12,20 +12,20 @@
   font-weight: bolder;
   outline: none;
   padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease-in,
+  transition: background-color 0.3s ease-in, color 0.5s ease-in,
     transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
   min-width: 20%;
   max-width: 150%;
 }
 
 .outline-btn {
-  border: thin solid var(--main-blue);
-  color: var(--main-blue);
+  border: 2px solid var(--main-yellow);
+  color: var(--main-gray);
   text-decoration: none;
 
   &:hover {
-    background-color: var(--main-blue);
-    color: var(--main-white);
+    background-color: var(--main-yellow);
+    color: var(--modal-dark);
   }
 
   &:active {

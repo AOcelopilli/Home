@@ -14,6 +14,7 @@ input[type="email"],
 textarea {
   border: thin solid var(--main-blue);
   border-radius: 0.75rem;
+  font-family: $font-baloo;
   outline: none;
   padding: 1rem 0 1rem 2rem;
   min-width: 35vw;
