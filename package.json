@@ -16,19 +16,5 @@
   "bugs": {
     "url": "https://github.com/AOcelopilli/Home/issues"
   },
-  "homepage": "https://github.com/AOcelopilli/Home#readme",
-  "dependencies": {
-    "@babel/preset-env": "^7.15.0",
-    "autoprefixer": "^10.3.1",
-    "browser-sync": "^2.27.5",
-    "cssnano": "^5.0.8",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^5.0.0",
-    "gulp-terser": "^2.0.1",
-    "postcss": "^8.3.6",
-    "sass": "^1.38.0"
-  }
+  "homepage": "https://github.com/AOcelopilli/Home#readme"
 }
