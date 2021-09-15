@@ -4,7 +4,8 @@
   "description": "Portafolio.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/style.scss styles.css"
   },
   "repository": {
     "type": "git",

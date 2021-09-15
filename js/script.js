@@ -1,4 +1,5 @@
 const d = document,
+  $modal = d.getElementById("modal-cv"),
   $form = d.getElementById("form"),
   $loader = d.getElementById("loader"),
   $formMsg = d.getElementById("form-msg");
@@ -54,4 +55,11 @@ d.addEventListener("submit", (e) => {
 
   $loader.classList.remove("active");
   $form.reset();
+});
+
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".modal-btn")) {
+    console.log("click");
+    $modal.classList.toggle("active");
+  }
 });

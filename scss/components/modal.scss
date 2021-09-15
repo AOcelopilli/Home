@@ -1,20 +1,56 @@
 .modal {
-  background-color: rgba($color: #000000, $alpha: 0.5);
   color: var(--main-white);
   display: none;
-  height: 100vh;
   left: 0;
-  position: fixed;
+  opacity: 0;
+  padding: 2rem 0;
+  position: absolute;
   top: 0;
-  transition: visibility 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
   visibility: hidden;
+  min-height: 100vh;
   width: 100vw;
 }
 
+.modal > * {
+  z-index: 10;
+}
+
+.modal::before {
+  background-color: rgba($color: #000000, $alpha: 0.75);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 .modal.active {
+  animation: show 0.5s ease 0.1s both;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   visibility: visible;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal h3 {
+  color: var(--main-yellow);
+  font-size: calc(3rem + 1vw);
+}
+
+.modal a {
+  margin: 2rem auto;
 }

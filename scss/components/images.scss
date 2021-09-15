@@ -2,7 +2,7 @@
   width: 80%;
   max-width: 350px;
   border-radius: 50%;
-  box-shadow: 0 4px 30px 10px var(--main-dark);
+  box-shadow: 0 3px 10px var(--main-dark), 0 0 5px var(--white-gray);
 }
 
 .square-img {
@@ -10,4 +10,5 @@
   max-width: 750px;
   margin: 0 auto;
   border-radius: calc(0.2rem + 0.5vw);
+  box-shadow: 0 0 10px var(--white-gray), 0 3px 5px var(--main-dark);
 }
