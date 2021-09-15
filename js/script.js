@@ -59,7 +59,12 @@ d.addEventListener("submit", (e) => {
 
 d.addEventListener("click", (e) => {
   if (e.target.matches(".modal-btn")) {
-    console.log("click");
-    $modal.classList.toggle("active");
+    if (!$modal.classList.contains("active")) {
+      $modal.classList.add("active");
+      window.scrollTo(0, 0);
+    } else {
+      $modal.classList.remove("active");
+      d.getElementById("about").scrollIntoView();
+    }
   }
 });

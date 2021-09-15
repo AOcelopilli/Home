@@ -46,6 +46,23 @@
   }
 }
 
+#modal-cv .modal-btn {
+  color: var(--main-blue);
+  background-color: var(--main-white);
+  font-size: 1.3rem;
+  font-weight: bold;
+  position: absolute;
+  right: 3rem;
+  top: 1rem;
+  scroll-margin: 3rem;
+  min-width: 5%;
+}
+
+#modal-cv .modal-btn:hover {
+  background-color: var(--main-blue);
+  color: var(--main-white);
+}
+
 .modal h3 {
   color: var(--main-yellow);
   font-size: calc(3rem + 1vw);
