@@ -83,7 +83,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
       } else {
         $carouselBtns[0].classList.add("active");
       }
-    }, 5000);
+    }, 15000);
   });
 });
 
