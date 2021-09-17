@@ -1,0 +1,35 @@
+.carousel-container {
+  max-width: 450px;
+  width: 90%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.carousel {
+  border-radius: calc(0.2rem + 0.5vw);
+  display: flex;
+  position: relative;
+  transition: transform 1s ease;
+}
+
+.carousel-btns {
+  margin: 1rem auto;
+}
+
+.carousel-btn {
+  background-color: var(--white-blue);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  transition: background-color 0.3s ease-out;
+  width: 30px;
+}
+
+.carousel-btn:hover {
+  background-color: var(--dark-blue);
+}
+
+.carousel-btn.active {
+  background-color: var(--dark-blue);
+}

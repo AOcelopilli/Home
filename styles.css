@@ -244,11 +244,9 @@ a::before {
 }
 
 .square-img {
-  width: 90%;
-  max-width: 750px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
   border-radius: calc(0.2rem + 0.5vw);
-  box-shadow: 0 0 10px var(--white-gray), 0 3px 5px var(--main-dark);
 }
 
 .modal {
@@ -433,6 +431,41 @@ footer a {
   100% {
     transform: translate(24px, 0);
   }
+}
+.carousel-container {
+  max-width: 450px;
+  width: 90%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.carousel {
+  border-radius: calc(0.2rem + 0.5vw);
+  display: flex;
+  position: relative;
+  transition: transform 1s ease;
+}
+
+.carousel-btns {
+  margin: 1rem auto;
+}
+
+.carousel-btn {
+  background-color: var(--white-blue);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  transition: background-color 0.3s ease-out;
+  width: 30px;
+}
+
+.carousel-btn:hover {
+  background-color: var(--dark-blue);
+}
+
+.carousel-btn.active {
+  background-color: var(--dark-blue);
 }
 
 /*# sourceMappingURL=styles.css.map */
