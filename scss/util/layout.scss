@@ -3,15 +3,19 @@
 .grid-1-2 {
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
   margin-bottom: 1rem;
+}
+
+.grid-1-2 > * {
+  margin: 1rem auto;
 }
 
 .text-center {
   text-align: center;
 }
 
-.btn-container {
+.project-btns {
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -24,6 +28,5 @@
 }
 
 .greeting {
-  line-height: 3rem;
   font-weight: bolder;
 }

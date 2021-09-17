@@ -1,5 +1,10 @@
 @use '../globals/boilerplate.scss' as *;
 
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 label {
   font-size: 1.2rem;
   font-family: $font-baloo;
@@ -15,9 +20,11 @@ textarea {
   border: thin solid var(--main-blue);
   border-radius: 0.75rem;
   font-family: $font-baloo;
+  font-size: calc(0.5rem + 1vw);
   outline: none;
   padding: 1rem 0 1rem 2rem;
   min-width: 35vw;
+  width: 100%;
   transition: border 0.5s ease-out;
 
   &:valid {

@@ -4,7 +4,6 @@
   background-color: transparent;
   border: none;
   border-radius: 1rem;
-  box-shadow: 0px 2px 6px var(--modal-dark);
   color: var(--dark-gray);
   cursor: pointer;
   font-family: $font-baloo;
@@ -12,26 +11,25 @@
   font-weight: bolder;
   outline: none;
   padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease-in, color 0.5s ease-in,
-    transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.3s ease-in, color 0.3s ease-in,
+    transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease-in;
   min-width: 20%;
   max-width: 150%;
 }
 
 .outline-btn {
-  border: 2px solid var(--main-yellow);
+  border: 2px solid var(--main-gray);
   color: var(--main-gray);
   text-decoration: none;
 
   &:hover {
     background-color: var(--main-yellow);
+    border: 2px solid var(--main-yellow);
+    box-shadow: 0 2px 6px var(--dark-gray), 0 2px 12px var(--main-dark);
     color: var(--modal-dark);
   }
 
   &:active {
-    background-color: var(--main-blue);
-    box-shadow: 0 0 5px var(--main-dark);
-    color: var(--main-white);
     transform: scale(0.95);
   }
 }
@@ -41,11 +39,12 @@
   padding: 0.5rem 2rem;
 
   &:hover {
-    background-color: var(--white-yellow);
+    background-color: var(--dark-yellow);
+    color: var(--main-dark);
+    box-shadow: 0 2px 6px var(--dark-gray), 0 2px 12px var(--main-dark);
   }
 
   &:active {
     transform: scale(0.95);
-    box-shadow: 0 0 5px var(--main-dark);
   }
 }

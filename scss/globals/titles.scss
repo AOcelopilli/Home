@@ -2,37 +2,40 @@
 
 h1 {
   color: var(--main-yellow);
+  text-align: center;
+  text-shadow: 0 2px 3px var(--dark-gray);
   font-family: $font-dancing;
-  font-size: 3.75rem;
-  margin: 1rem 0;
+  font-size: calc(3rem + 3vw);
+  margin: 2rem auto;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: calc(2.5rem + 1vw);
 }
 
 h3 {
-  font-size: 2rem;
-  padding: 2rem 1rem;
+  font-size: calc(1.5rem + 1vw);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+h3::before {
+  content: "> ";
+}
+
+h3::after {
+  content: " <";
 }
 
 h2,
 h3 {
   font-family: $font-baloo;
-  color: var(--main-blue);
+  color: var(--dark-yellow);
+  text-shadow: 0 1px 2px var(--white-gray);
 }
 
 h4 {
+  font-size: calc(1rem + 1vw);
   color: var(--dark-gray);
   margin-bottom: 0.5rem;
-}
-
-.job-title {
-  font-size: 2rem;
-  color: var(--main-gray);
-}
-
-.greeting {
-  font-size: 3rem;
-  padding: 2rem 1rem;
 }

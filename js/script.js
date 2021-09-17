@@ -64,6 +64,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   $carousel.forEach((car) => {
     let carouselX = 0;
     $carouselBtns[0].classList.add("active");
+    $carouselBtns[3].classList.add("active");
 
     setInterval(() => {
       $carouselBtns.forEach((btn) => btn.classList.remove("active"));
@@ -78,10 +79,13 @@ d.addEventListener("DOMContentLoaded", (e) => {
 
       if (carouselX == 100) {
         $carouselBtns[1].classList.add("active");
+        $carouselBtns[4].classList.add("active");
       } else if (carouselX == 200) {
         $carouselBtns[2].classList.add("active");
+        $carouselBtns[5].classList.add("active");
       } else {
         $carouselBtns[0].classList.add("active");
+        $carouselBtns[3].classList.add("active");
       }
     }, 15000);
   });

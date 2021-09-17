@@ -14,6 +14,7 @@ html {
   font-size: 16px;
   font-family: "Nunito";
   scroll-behavior: smooth;
+  color: var(--main-gray);
 }
 
 body {
@@ -21,18 +22,30 @@ body {
   font-size: calc(1rem + 1vw);
   place-items: center;
   color: var(--main-gray);
+  padding-top: 3rem;
+  max-width: 1400px;
+}
+
+body > * {
+  padding: 0 1rem;
 }
 
 section {
-  padding: 3rem 0;
+  padding: 3rem 1rem;
+  width: 100%;
 }
 
+@media screen and (min-width: 600px) {
+  section {
+    padding-left: calc(1rem + 2vw);
+    padding-right: calc(1rem + 2vw);
+  }
+}
 p {
   line-height: 2rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   max-width: 1400px;
-  padding: 1rem;
-  width: 80%;
+  width: 100%;
 }
 
 ul {
@@ -41,8 +54,8 @@ ul {
 }
 
 hr {
-  width: 80%;
-  margin-top: 5rem;
+  width: 90%;
+  margin: 2rem auto;
   border: thin solid var(--white-gray);
   border-radius: 1rem;
 }
@@ -69,39 +82,42 @@ hr {
 
 h1 {
   color: var(--main-yellow);
+  text-align: center;
+  text-shadow: 0 2px 3px var(--dark-gray);
   font-family: "Dancing Script";
-  font-size: 3.75rem;
-  margin: 1rem 0;
+  font-size: calc(3rem + 3vw);
+  margin: 2rem auto;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: calc(2.5rem + 1vw);
 }
 
 h3 {
-  font-size: 2rem;
-  padding: 2rem 1rem;
+  font-size: calc(1.5rem + 1vw);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+h3::before {
+  content: "> ";
+}
+
+h3::after {
+  content: " <";
 }
 
 h2,
 h3 {
   font-family: "Baloo Chettan 2";
-  color: var(--main-blue);
+  color: var(--dark-yellow);
+  text-shadow: 0 1px 2px var(--white-gray);
 }
 
 h4 {
+  font-size: calc(1rem + 1vw);
   color: var(--dark-gray);
   margin-bottom: 0.5rem;
-}
-
-.job-title {
-  font-size: 2rem;
-  color: var(--main-gray);
-}
-
-.greeting {
-  font-size: 3rem;
-  padding: 2rem 1rem;
 }
 
 a {
@@ -125,7 +141,7 @@ a::before {
 
 .social-media-link {
   color: var(--white-gray);
-  font-size: calc(3rem + 1vw);
+  font-size: calc(2rem + 1vw);
   transition: color 0.3s ease-in-out;
 }
 .social-media-link:hover {
@@ -135,15 +151,19 @@ a::before {
 .grid-1-2 {
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
   margin-bottom: 1rem;
+}
+
+.grid-1-2 > * {
+  margin: 1rem auto;
 }
 
 .text-center {
   text-align: center;
 }
 
-.btn-container {
+.project-btns {
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -166,7 +186,6 @@ a::before {
 }
 
 .greeting {
-  line-height: 3rem;
   font-weight: bolder;
 }
 
@@ -174,7 +193,6 @@ a::before {
   background-color: transparent;
   border: none;
   border-radius: 1rem;
-  box-shadow: 0px 2px 6px var(--modal-dark);
   color: var(--dark-gray);
   cursor: pointer;
   font-family: "Baloo Chettan 2";
@@ -182,24 +200,23 @@ a::before {
   font-weight: bolder;
   outline: none;
   padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease-in, color 0.5s ease-in, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.3s ease-in, color 0.3s ease-in, transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease-in;
   min-width: 20%;
   max-width: 150%;
 }
 
 .outline-btn {
-  border: 2px solid var(--main-yellow);
+  border: 2px solid var(--main-gray);
   color: var(--main-gray);
   text-decoration: none;
 }
 .outline-btn:hover {
   background-color: var(--main-yellow);
+  border: 2px solid var(--main-yellow);
+  box-shadow: 0 2px 6px var(--dark-gray), 0 2px 12px var(--main-dark);
   color: var(--modal-dark);
 }
 .outline-btn:active {
-  background-color: var(--main-blue);
-  box-shadow: 0 0 5px var(--main-dark);
-  color: var(--main-white);
   transform: scale(0.95);
 }
 
@@ -208,11 +225,12 @@ a::before {
   padding: 0.5rem 2rem;
 }
 .solid-btn:hover {
-  background-color: var(--white-yellow);
+  background-color: var(--dark-yellow);
+  color: var(--main-dark);
+  box-shadow: 0 2px 6px var(--dark-gray), 0 2px 12px var(--main-dark);
 }
 .solid-btn:active {
   transform: scale(0.95);
-  box-shadow: 0 0 5px var(--main-dark);
 }
 
 .inline-list {
@@ -231,7 +249,7 @@ a::before {
 }
 .bullet-list li::before {
   content: "•";
-  color: var(--white-yellow);
+  color: var(--white-blue);
   display: inline-block;
   width: calc(1rem + 2vw);
 }
@@ -321,6 +339,11 @@ a::before {
   margin: 2rem auto;
 }
 
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 label {
   font-size: 1.2rem;
   font-family: "Baloo Chettan 2";
@@ -336,9 +359,11 @@ textarea {
   border: thin solid var(--main-blue);
   border-radius: 0.75rem;
   font-family: "Baloo Chettan 2";
+  font-size: calc(0.5rem + 1vw);
   outline: none;
   padding: 1rem 0 1rem 2rem;
   min-width: 35vw;
+  width: 100%;
   transition: border 0.5s ease-out;
 }
 input[type=text]:valid,
@@ -455,9 +480,9 @@ footer a {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  height: 30px;
+  height: calc(1rem + 1vw);
   transition: background-color 0.3s ease-out;
-  width: 30px;
+  width: calc(1rem + 1vw);
 }
 
 .carousel-btn:hover {
