@@ -2,13 +2,11 @@
   max-width: 450px;
   width: 90%;
   overflow-x: hidden;
-  position: relative;
 }
 
 .carousel {
   border-radius: calc(0.2rem + 0.5vw);
   display: flex;
-  position: relative;
   transition: transform 1s ease;
 }
 

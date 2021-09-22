@@ -265,6 +265,7 @@ a::before {
   width: 100%;
   max-width: 500px;
   border-radius: calc(0.2rem + 0.5vw);
+  display: inline-block;
 }
 
 .modal {
@@ -279,10 +280,11 @@ a::before {
   visibility: hidden;
   min-height: 100vh;
   width: 100vw;
+  z-index: 10;
 }
 
 .modal > * {
-  z-index: 10;
+  z-index: 20;
 }
 
 .modal::before {
@@ -293,7 +295,7 @@ a::before {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 
 .modal.active {
@@ -461,13 +463,11 @@ footer a {
   max-width: 450px;
   width: 90%;
   overflow-x: hidden;
-  position: relative;
 }
 
 .carousel {
   border-radius: calc(0.2rem + 0.5vw);
   display: flex;
-  position: relative;
   transition: transform 1s ease;
 }
 
