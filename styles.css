@@ -13,10 +13,10 @@
   --tertiary-dark: #1835f2;
   --tertiary-white: #7889f7;
   /* base colors */
-  --main-white: #f6f8fa;
-  --modal-white: #eceef6;
-  --main-dark: #1f1f1f;
-  --modal-dark: #353535;
+  --white: #f6f8fa;
+  --whtie-modal: #eceef6;
+  --dark: #1f1f1f;
+  --dark-modal: #353535;
   /* fonts */
   --fluid-1: calc(1rem + 1vw);
   --fluid-2: calc(2rem + 1.5vw);
@@ -26,9 +26,7 @@
 }
 
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Serif&display=swap");
 
 *,
 *::after,
@@ -40,19 +38,19 @@
 
 html {
   font-size: 16px;
-  font-family: "Baloo Chettan 2", Arial, Helvetica, sans-serif;
+  font-family: "Noto Serif", Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
-  color: var(--main-gray);
+  color: var(--secondary);
 }
 
 body {
   font-size: var(--fluid-1);
-  color: var(--main-gray);
+  margin-top: 5rem;
   max-width: 1400px;
 }
 
 header {
-  background-color: var(--modal-dark);
+  background-color: var(--dark-modal);
   position: fixed;
   top: 0;
   width: 100%;
@@ -98,6 +96,74 @@ header nav a {
   padding: 0.5rem 0;
 }
 
-main {
-  margin-top: 5rem;
+footer {
+  align-items: center;
+  background-color: var(--dark-modal);
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  height: 4rem;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+footer section {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+footer section a {
+  color: var(--secondary);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-dark);
+  padding: 1rem 0;
+  text-align: center;
+  font-family: "Josefin Sans";
+}
+
+p {
+  padding: calc(1rem + 1vw);
+}
+
+a {
+  text-decoration: none;
+  color: var(--tertiary);
+}
+
+a:hover {
+  color: var(--tertiary-dark);
+  text-decoration: underline;
+}
+
+.special-anchor {
+  color: var(--white);
+  background-color: var(--tertiary-white);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease;
+}
+.special-anchor:hover {
+  color: var(--white);
+  text-decoration: none;
+  background-color: var(--tertiary-dark);
+}
+
+.responsive-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.grid-responsive {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(calc(100px + 1vw), 1fr));
+  gap: calc(0.5rem + 1vw);
 }
