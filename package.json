@@ -5,17 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch scss/style.scss styles.css"
+    "sass": "sass --watch scss/style.scss styles.css",
+    "start": "sergey",
+    "dev": "sergey --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AOcelopilli/Home.git"
+    "url": "git+https://github.com/angelpineda-dev/Home.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AOcelopilli/Home/issues"
+    "url": "https://github.com/angelpineda-dev/Home/issues"
   },
-  "homepage": "https://github.com/AOcelopilli/Home#readme"
+  "homepage": "https://github.com/angelpineda-dev/Home#readme",
+  "dependencies": {
+    "sergey": "^0.0.4"
+  }
 }
