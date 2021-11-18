@@ -13,8 +13,8 @@
   --tertiary-dark: #215fc2;
   --tertiary-white: #74a6f7;
   /* base colors */
-  --white: #f6f8fa;
-  --whtie-modal: #eceef6;
+  --white: #f6f8fa8e;
+  --white-modal: #eceef6b7;
   --dark: #1f1f1f;
   --dark-modal: #353535;
   /* fonts */
@@ -96,10 +96,11 @@ header nav.show {
 
 header nav a {
   color: var(--primary-white);
-  border-radius: 0.5rem;
+  padding: 1rem 0;
+  text-align: center;
   text-decoration: none;
-  padding: 0.5rem 1rem;
   transition: background-color 0.2s ease-in;
+  width: 100%;
 }
 
 header nav a:hover {
@@ -108,7 +109,7 @@ header nav a:hover {
   background-color: #ffffff41;
 }
 
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 620px) {
   header {
     align-items: center;
     display: flex;
@@ -123,6 +124,12 @@ header nav a:hover {
     height: 50px;
     flex-direction: row;
     width: 60%;
+  }
+
+  header nav a {
+    border-radius: 0.5rem;
+    padding: 0.5rem calc(0.25rem + 1vw);
+    width: min-content;
   }
 }
 
@@ -160,8 +167,9 @@ footer small {
 }
 
 form {
-  width: 90%;
+  position: relative;
   max-width: 400px;
+  width: 90%;
 }
 
 form div {
@@ -172,11 +180,28 @@ form input,
 form textarea {
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 3px 3px 5px var(--secondary), -3px -3px 5px var(--whtie-modal);
+  box-shadow: 3px 3px 5px var(--secondary-white),
+    -3px -3px 5px var(--white-modal);
+  color: var(--secondary);
   margin: 0.25rem auto;
   outline: none;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   width: 100%;
+}
+
+form input + small,
+form textarea + small {
+  opacity: 0;
+  text-align: center;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+form input.wrong + small,
+form textarea.wrong + small {
+  opacity: 1;
+  color: rgb(233, 66, 66);
+  transform: translateY(0px);
 }
 
 form textarea {
@@ -187,8 +212,9 @@ form input:active,
 form input:focus,
 form textarea:active,
 form textarea:focus {
-  box-shadow: 3px 3px 5px var(--whtie-modal) inset,
+  box-shadow: 3px 3px 5px var(--white-modal) inset,
     -3px -3px 5px var(--secondary-white) inset;
+  color: var(--secondary-dark);
 }
 
 form button {
@@ -198,13 +224,13 @@ form button {
   color: var(--tertiary-dark);
   cursor: pointer;
   padding: 0.5rem 1rem;
-
+  margin: 1rem 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 form button:hover {
   background-color: var(--tertiary-dark);
-  color: var(--whtie-modal);
+  color: var(--white-modal);
 }
 
 article {
@@ -542,5 +568,116 @@ small {
 
   50% {
     transform: translateX(-700px);
+  }
+}
+
+/* Loader */
+#loader {
+  background: linear-gradient(230deg, var(--white), var(--white-modal));
+  display: none;
+  border-radius: 1rem;
+  height: 100%;
+  width: 110%;
+  left: -10%;
+  top: -5%;
+  position: absolute;
+}
+
+#loader.active {
+  display: flex;
+  justify-content: center;
+}
+
+#loader p {
+  color: var(--tertiary);
+}
+
+#form-msg h3 {
+  color: var(--tertiary);
+}
+
+.lds-default {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-default div {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--tertiary);
+  border-radius: 50%;
+  animation: lds-default 1.2s linear infinite;
+}
+.lds-default div:nth-child(1) {
+  animation-delay: 0s;
+  top: 37px;
+  left: 66px;
+}
+.lds-default div:nth-child(2) {
+  animation-delay: -0.1s;
+  top: 22px;
+  left: 62px;
+}
+.lds-default div:nth-child(3) {
+  animation-delay: -0.2s;
+  top: 11px;
+  left: 52px;
+}
+.lds-default div:nth-child(4) {
+  animation-delay: -0.3s;
+  top: 7px;
+  left: 37px;
+}
+.lds-default div:nth-child(5) {
+  animation-delay: -0.4s;
+  top: 11px;
+  left: 22px;
+}
+.lds-default div:nth-child(6) {
+  animation-delay: -0.5s;
+  top: 22px;
+  left: 11px;
+}
+.lds-default div:nth-child(7) {
+  animation-delay: -0.6s;
+  top: 37px;
+  left: 7px;
+}
+.lds-default div:nth-child(8) {
+  animation-delay: -0.7s;
+  top: 52px;
+  left: 11px;
+}
+.lds-default div:nth-child(9) {
+  animation-delay: -0.8s;
+  top: 62px;
+  left: 22px;
+}
+.lds-default div:nth-child(10) {
+  animation-delay: -0.9s;
+  top: 66px;
+  left: 37px;
+}
+.lds-default div:nth-child(11) {
+  animation-delay: -1s;
+  top: 62px;
+  left: 52px;
+}
+.lds-default div:nth-child(12) {
+  animation-delay: -1.1s;
+  top: 52px;
+  left: 62px;
+}
+@keyframes lds-default {
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
   }
 }

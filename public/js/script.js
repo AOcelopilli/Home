@@ -38,7 +38,6 @@ d.addEventListener("submit", (e) => {
         }, 3000);
       }
 
-      // Se envia un arreglo vacio
       if (data.success) {
         let $msg = d.createElement("h3");
         $msg.innerText = "Los datos han sido enviados con exito.";
@@ -56,6 +55,40 @@ d.addEventListener("submit", (e) => {
 
   $loader.classList.remove("active");
   $form.reset();
+});
+
+d.addEventListener("keyup", (e) => {
+  const { name, email, subject, comments } = $form;
+
+  if (e.target === name) {
+    const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    regexName.test(name.value.trim())
+      ? name.classList.remove("wrong")
+      : name.classList.add("wrong");
+  }
+
+  if (e.target === email) {
+    const regexEmail =
+      /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+
+    regexEmail.test(email.value.trim())
+      ? email.classList.remove("wrong")
+      : email.classList.add("wrong");
+  }
+
+  if (e.target === subject) {
+    subject.value.trim().length <= 1
+      ? subject.classList.add("wrong")
+      : subject.classList.remove("wrong");
+  }
+
+  if (e.target === comments) {
+    const regexComments = /^.{1,255}$/;
+
+    regexComments.test(comments.value.trim())
+      ? comments.classList.remove("wrong")
+      : comments.classList.add("wrong");
+  }
 });
 
 d.addEventListener("click", (e) => {

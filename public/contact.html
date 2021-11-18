@@ -59,27 +59,50 @@
     </a>
   </article>
   <section class="flex-center">
-    <form class="flex-col">
+    <form class="flex-col" id="form">
       <div class="flex-col">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" required>
+        <small>Name recive letters and white spaces</small>
       </div>
       <div class="flex-col">
         <label for="email">Email</label>
-        <input type="text" name="email" id="email">
+        <input type="text" name="email" id="email" required>
+        <small>A valid emails requires a name, @ and domain.</small>
       </div>
       <div class="flex-col">
         <label for="subject">Subject</label>
-        <input type="text" name="subject">
+        <input type="text" name="subject" required>
+        <small>Subject is requiered.</small>
       </div>
       <div class="flex-col">
-        <label for="comments">Comments</label>
-        <textarea name="comments" id="comments" cols="15" rows="5"></textarea>
+        <label for="comments">Comments.</label>
+        <textarea name="comments" id="comments" cols="15" rows="5" required></textarea>
+        <small>Comments are required and can not be more than 255 characters.</small>
       </div>
 
       <button type="submit">Submit</button>
 
+      <div class="flex-center" id="loader">
+        <div class="lds-default">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+
     </form>
+    <div id="form-msg"></div>
   </section>
   <footer>
   <section>
