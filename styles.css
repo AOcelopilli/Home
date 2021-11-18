@@ -13,10 +13,10 @@
   --tertiary-dark: #215fc2;
   --tertiary-white: #74a6f7;
   /* base colors */
-  --white: #f6f8fa8e;
+  --white: #f6f8fa90;
   --white-modal: #eceef6b7;
-  --dark: #1f1f1f;
-  --dark-modal: #353535;
+  --dark: #353535;
+  --dark-modal: #35353580;
   /* fonts */
   --fluid-1: calc(1rem + 1vw);
   --fluid-2: calc(2rem + 1.5vw);
@@ -44,6 +44,7 @@ html {
 }
 
 body {
+  background-color: var(--white);
   font-size: var(--fluid-1);
   margin: 0 auto;
   margin-top: 5rem;
@@ -51,7 +52,7 @@ body {
 }
 
 header {
-  background-color: var(--dark-modal);
+  background-color: var(--dark);
   position: fixed;
   top: 0;
   width: 100%;
@@ -72,7 +73,12 @@ header aside h2 {
   color: var(--primary-white);
   font-size: calc(1rem + 1vw);
   font-family: "Dancing Script";
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+header aside h2:hover {
+  color: var(--primary);
+  transform: scale(1.1);
 }
 
 header aside a:hover {
@@ -113,7 +119,12 @@ header nav a:hover {
   header {
     align-items: center;
     display: flex;
+    height: 5rem;
     justify-content: space-evenly;
+  }
+
+  header aside {
+    border: none;
   }
 
   header aside button {
@@ -128,14 +139,22 @@ header nav a:hover {
 
   header nav a {
     border-radius: 0.5rem;
-    padding: 0.5rem calc(0.25rem + 1vw);
+    padding: 0.25rem calc(0.25rem + 1vw);
     width: min-content;
+  }
+
+  header nav a:nth-child(3) {
+    border: thin solid var(--primary);
+  }
+  header nav a:nth-child(3):hover {
+    background-color: var(--primary);
+    color: var(--dark);
   }
 }
 
 footer {
   align-items: center;
-  background-color: var(--dark-modal);
+  background-color: var(--dark);
   color: var(--primary);
   display: flex;
   flex-direction: column;
@@ -167,9 +186,12 @@ footer small {
 }
 
 form {
+  background-color: var(--white-modal);
+  border-radius: 1rem;
+  box-shadow: 0px 0px 4px var(--secondary-dark);
   position: relative;
-  max-width: 400px;
-  width: 90%;
+  max-width: 550px;
+  width: 100%;
 }
 
 form div {
@@ -180,8 +202,7 @@ form input,
 form textarea {
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 3px 3px 5px var(--secondary-white),
-    -3px -3px 5px var(--white-modal);
+  box-shadow: 3px 3px 5px var(--secondary), -3px -3px 5px #d1d3d590;
   color: var(--secondary);
   margin: 0.25rem auto;
   outline: none;
@@ -212,7 +233,7 @@ form input:active,
 form input:focus,
 form textarea:active,
 form textarea:focus {
-  box-shadow: 3px 3px 5px var(--white-modal) inset,
+  box-shadow: 3px 3px 5px var(--secondary-dark) inset,
     -3px -3px 5px var(--secondary-white) inset;
   color: var(--secondary-dark);
 }
@@ -255,10 +276,19 @@ a:hover {
 h1,
 h2,
 h3 {
-  color: var(--primary-dark);
+  color: var(--primary);
   padding: 1rem 0;
   text-align: center;
   font-family: "Josefin Sans";
+  text-shadow: 0px 0px 3px var(--secondary);
+  width: 100%;
+}
+
+h4 {
+  color: var(--secondary);
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
 }
 
 p {
@@ -490,16 +520,20 @@ small {
 }
 
 .picture {
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  overflow: hidden;
   background-color: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.479) inset;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
 }
 
 .picture img {
   box-shadow: none;
-  transform: translateY(30px);
+  position: absolute;
+  bottom: -2.5%;
+  left: 7.5%;
   filter: drop-shadow(0 0 4px var(--dark-modal));
 }
 
@@ -518,8 +552,7 @@ small {
 }
 
 .special-anchor {
-  color: var(--white);
-  background-color: var(--tertiary-white);
+  color: var(--tertiary-dark);
   border-radius: 5px;
   padding: 0.5rem;
   margin: 1rem auto;
@@ -527,9 +560,8 @@ small {
 }
 
 .special-anchor:hover {
-  color: var(--white);
-  text-decoration: none;
-  background-color: var(--tertiary-dark);
+  color: var(--tertiary-white);
+  text-decoration: underline;
 }
 
 .special-anchor:active {

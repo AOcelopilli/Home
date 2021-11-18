@@ -3,7 +3,8 @@ const d = document,
   $menu = d.getElementById("menu"),
   $form = d.getElementById("form"),
   $loader = d.getElementById("loader"),
-  $formMsg = d.getElementById("form-msg");
+  $formMsg = d.getElementById("form-msg"),
+  $photo = d.getElementById("profile-photo");
 
 d.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -99,5 +100,14 @@ d.addEventListener("click", (e) => {
     } else {
       $menu.classList.remove("show");
     }
+  }
+});
+
+d.addEventListener("mousemove", (e) => {
+  if ($photo) {
+    const moveX = (e.clientX / 90) * -1;
+    const moveY = (e.clientY / 90) * -1;
+
+    $photo.style.transform = `translateX(${moveX}px) translateY(${moveY}px)`;
   }
 });
