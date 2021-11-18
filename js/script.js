@@ -1,7 +1,6 @@
 const d = document,
-  $modal = d.getElementById("modal-cv"),
-  $carousel = d.querySelectorAll(".carousel"),
-  $carouselBtns = d.querySelectorAll(".carousel-btn"),
+  $btnMenu = d.getElementById("btn-menu"),
+  $menu = d.getElementById("menu"),
   $form = d.getElementById("form"),
   $loader = d.getElementById("loader"),
   $formMsg = d.getElementById("form-msg");
@@ -59,65 +58,13 @@ d.addEventListener("submit", (e) => {
   $form.reset();
 });
 
-d.addEventListener("DOMContentLoaded", (e) => {
-  /* Carousel animation */
-  $carousel.forEach((car) => {
-    let carouselX = 0;
-    $carouselBtns[0].classList.add("active");
-    $carouselBtns[3].classList.add("active");
-
-    setInterval(() => {
-      $carouselBtns.forEach((btn) => btn.classList.remove("active"));
-
-      if (carouselX < 200) {
-        carouselX += 100;
-        car.style.transform = `translateX(-${carouselX}%)`;
-      } else {
-        carouselX = 0;
-        car.style.transform = `translateX(-${carouselX}%)`;
-      }
-
-      if (carouselX == 100) {
-        $carouselBtns[1].classList.add("active");
-        $carouselBtns[4].classList.add("active");
-      } else if (carouselX == 200) {
-        $carouselBtns[2].classList.add("active");
-        $carouselBtns[5].classList.add("active");
-      } else {
-        $carouselBtns[0].classList.add("active");
-        $carouselBtns[3].classList.add("active");
-      }
-    }, 15000);
-  });
-});
-
 d.addEventListener("click", (e) => {
-  /* Modal */
-  if (e.target.matches(".modal-btn")) {
-    if (!$modal.classList.contains("active")) {
-      $modal.classList.add("active");
-      window.scrollTo(0, 0);
+  /* Mobile Menu */
+  if (e.target.matches("#btn-menu") || e.target.matches("#btn-menu *")) {
+    if (!$menu.classList.contains("show")) {
+      $menu.classList.add("show");
     } else {
-      $modal.classList.remove("active");
-      d.getElementById("about").scrollIntoView();
+      $menu.classList.remove("show");
     }
-  }
-
-  /* Carousel buttons */
-  if (e.target.matches(".carousel-btn")) {
-    let carousel = e.target.parentNode.parentNode.childNodes[1];
-    let x = e.target.dataset.x;
-
-    e.target.parentNode.childNodes[1].classList.remove("active");
-    e.target.parentNode.childNodes[3].classList.remove("active");
-    e.target.parentNode.childNodes[5].classList.remove("active");
-
-    e.target.classList.add("active");
-
-    carousel.style.transform = `translateX(${x}%)`;
-
-    /* console.log(
-      window.getComputedStyle(carousel).getPropertyValue("transform")
-    ); */
   }
 });

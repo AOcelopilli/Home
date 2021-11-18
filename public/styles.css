@@ -98,7 +98,7 @@ header nav a {
   color: var(--primary-white);
   border-radius: 0.5rem;
   text-decoration: none;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   transition: background-color 0.2s ease-in;
 }
 
@@ -159,6 +159,54 @@ footer small {
   padding: 1rem 0;
 }
 
+form {
+  width: 90%;
+  max-width: 400px;
+}
+
+form div {
+  width: 90%;
+}
+
+form input,
+form textarea {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 5px var(--secondary), -3px -3px 5px var(--whtie-modal);
+  margin: 0.25rem auto;
+  outline: none;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+form textarea {
+  resize: none;
+}
+
+form input:active,
+form input:focus,
+form textarea:active,
+form textarea:focus {
+  box-shadow: 3px 3px 5px var(--whtie-modal) inset,
+    -3px -3px 5px var(--secondary-white) inset;
+}
+
+form button {
+  background-color: var(--white);
+  border: thin solid var(--tertiary);
+  border-radius: 0.5rem;
+  color: var(--tertiary-dark);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--tertiary-dark);
+  color: var(--whtie-modal);
+}
+
 article {
   align-items: center;
   display: flex;
@@ -199,6 +247,14 @@ p {
   }
 }
 
+ul {
+  padding: 1rem;
+}
+
+ul li {
+  padding: 0.25rem;
+}
+
 img {
   box-shadow: 0px 0px 10px var(--dark-modal);
   border-radius: 0.5rem;
@@ -214,6 +270,30 @@ small {
   font-size: calc(0.5rem + 1vw);
 }
 
+#btn-menu {
+  background-color: transparent;
+  border: thin solid transparent;
+  border-radius: 0.5rem;
+  color: var(--primary-white);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  transition: all 0.4s ease-in-out;
+}
+
+#btn-menu:hover {
+  border: thin solid var(--primary-white);
+  background-color: var(--primary-white);
+  color: var(--dark-modal);
+}
+
+#btn-menu:active {
+  border: thin solid var(--primary-white);
+  background-color: var(--primary-white);
+  color: var(--dark-modal);
+  transform: scale(0.9);
+}
+
 .btn {
   border: thin solid var(--tertiary);
   border-radius: 0.5rem;
@@ -224,12 +304,19 @@ small {
   text-align: center;
   margin: 1rem auto;
   width: calc(200px + 1vw);
-  transition: background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .btn:hover {
   background-color: var(--tertiary-dark);
   color: var(--white);
+}
+
+.btn:active {
+  background-color: var(--tertiary-dark);
+  color: var(--white);
+  transform: scale(0.9);
 }
 
 .contact-social-media {
@@ -283,10 +370,19 @@ small {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: calc(1rem + 2vw);
+  margin: calc(0.5rem + 2vw);
+}
+
+.flex-col {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0.5rem;
 }
 
 .carousel-container {
+  border-radius: 0.5rem;
   width: 100%;
 }
 
@@ -316,7 +412,7 @@ small {
 
   .grid-responsive {
     align-items: center;
-    animation: horizontal-scroll 20s linear infinite;
+    animation: carousel-700 35s linear infinite;
     box-shadow: 0px 0px 0px;
     display: flex;
     flex-wrap: wrap;
@@ -329,16 +425,17 @@ small {
   .grid-responsive div {
     margin: 0 calc(0.25rem + 1vw);
   }
+}
 
-  @keyframes horizontal-scroll {
-    0%,
-    100% {
-      left: 0;
-    }
+@media screen and (min-width: 950px) {
+  .grid-responsive {
+    animation: carousel-950 30s linear infinite;
+  }
+}
 
-    50% {
-      left: calc(-100% - 10vw);
-    }
+@media screen and (min-width: 1200px) {
+  .grid-responsive {
+    animation: carousel-1200 30s linear infinite;
   }
 }
 
@@ -400,7 +497,7 @@ small {
   border-radius: 5px;
   padding: 0.5rem;
   margin: 1rem auto;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .special-anchor:hover {
@@ -411,4 +508,39 @@ small {
 
 .special-anchor:active {
   transform: scale(0.9);
+}
+
+/* Carousel */
+
+@keyframes carousel-700 {
+  0%,
+  100% {
+    left: 0%;
+  }
+
+  50% {
+    transform: translateX(-1000px);
+  }
+}
+
+@keyframes carousel-950 {
+  0%,
+  100% {
+    left: 0%;
+  }
+
+  50% {
+    transform: translateX(-850px);
+  }
+}
+
+@keyframes carousel-1200 {
+  0%,
+  100% {
+    left: 0%;
+  }
+
+  50% {
+    transform: translateX(-700px);
+  }
 }
