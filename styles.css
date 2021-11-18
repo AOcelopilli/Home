@@ -232,6 +232,30 @@ small {
   color: var(--white);
 }
 
+.contact-social-media {
+  align-items: center;
+  background-color: var(--primary-white);
+  border-radius: 0.5rem;
+  color: var(--secondary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  width: 50%;
+  max-width: 300px;
+}
+
+.contact-social-media a {
+  color: var(--secondary);
+  font-size: calc(1.5rem + 1vw);
+  transition: color 0.3s ease;
+}
+
+.contact-social-media a:hover {
+  color: var(--secondary-dark);
+}
+
 .desc {
   border-left: thick solid var(--tertiary);
   padding-left: 0.5rem;
