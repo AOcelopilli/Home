@@ -2,6 +2,7 @@ const d = document,
   $btnMenu = d.getElementById("btn-menu"),
   $menu = d.getElementById("menu"),
   $form = d.getElementById("form"),
+  $btnSubmit = d.getElementById("btn-submit"),
   $loader = d.getElementById("loader"),
   $formMsg = d.getElementById("form-msg"),
   $photo = d.getElementById("profile-photo");
@@ -30,7 +31,7 @@ d.addEventListener("submit", (e) => {
     .then((data) => {
       if (data.success == "false") {
         let $msg = d.createElement("h3");
-        $msg.innerText = "Ocurrio un error, por favor vuelve a intentar";
+        $msg.innerText = "An error has occurred please try again.";
 
         $formMsg.appendChild($msg);
 
@@ -41,7 +42,7 @@ d.addEventListener("submit", (e) => {
 
       if (data.success) {
         let $msg = d.createElement("h3");
-        $msg.innerText = "Los datos han sido enviados con exito.";
+        $msg.innerText = "information submitted successfully.";
 
         $formMsg.appendChild($msg);
 
@@ -52,48 +53,67 @@ d.addEventListener("submit", (e) => {
     })
     .catch((err) => {
       console.log(err.msg);
+    })
+    .finally(() => {
+      $loader.classList.remove("active");
+      $form.reset();
     });
-
-  $loader.classList.remove("active");
-  $form.reset();
 });
 
 d.addEventListener("keyup", (e) => {
+  /* form inputs */
   const { name, email, subject, comments } = $form;
 
   if (e.target === name) {
     const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-    regexName.test(name.value.trim())
-      ? name.classList.remove("wrong")
-      : name.classList.add("wrong");
+
+    if (regexName.test(name.value.trim())) {
+      name.classList.remove("wrong");
+      $btnSubmit.disabled = false;
+    } else {
+      name.classList.add("wrong");
+      $btnSubmit.disabled = true;
+    }
   }
 
   if (e.target === email) {
     const regexEmail =
       /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
 
-    regexEmail.test(email.value.trim())
-      ? email.classList.remove("wrong")
-      : email.classList.add("wrong");
+    if (regexEmail.test(email.value.trim())) {
+      email.classList.remove("wrong");
+      $btnSubmit.disabled = false;
+    } else {
+      email.classList.add("wrong");
+      $btnSubmit.disabled = true;
+    }
   }
 
   if (e.target === subject) {
-    subject.value.trim().length <= 1
-      ? subject.classList.add("wrong")
-      : subject.classList.remove("wrong");
+    if (subject.value.trim().length <= 1) {
+      subject.classList.add("wrong");
+      $btnSubmit.disabled = false;
+    } else {
+      subject.classList.remove("wrong");
+      $btnSubmit.disabled = true;
+    }
   }
 
   if (e.target === comments) {
     const regexComments = /^.{1,255}$/;
 
-    regexComments.test(comments.value.trim())
-      ? comments.classList.remove("wrong")
-      : comments.classList.add("wrong");
+    if (regexComments.test(comments.value.trim())) {
+      comments.classList.remove("wrong");
+      $btnSubmit.disabled = false;
+    } else {
+      comments.classList.add("wrong");
+      $btnSubmit.disabled = true;
+    }
   }
 });
 
 d.addEventListener("click", (e) => {
-  /* Mobile Menu */
+  /* Screen mobile - Menu button */
   if (e.target.matches("#btn-menu") || e.target.matches("#btn-menu *")) {
     if (!$menu.classList.contains("show")) {
       $menu.classList.add("show");
@@ -104,6 +124,7 @@ d.addEventListener("click", (e) => {
 });
 
 d.addEventListener("mousemove", (e) => {
+  /* About section - photo */
   if ($photo) {
     const moveX = (e.clientX / 90) * -1;
     const moveY = (e.clientY / 90) * -1;
