@@ -1,0 +1,24 @@
+.social-media{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+
+  a{
+    background-color: $secondary;
+    border-radius: 50%;
+    color: $white;
+    font-size: 3rem;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+      background-color: $secondary_light;
+    }
+  }
+}

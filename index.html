@@ -5,23 +5,59 @@
   <!-- Meta info -->
   <meta name="description"
     content="Angel Pineda a Front End Developer, I specialize in the JavaScript programming language, working together with libraries, frameworks and other tools to create web applications.">
-  <sergey-import src="meta.html" />
+  <link rel="stylesheet" href="./styles/css/index.css">  
+  <script src="https://kit.fontawesome.com/d3eb4888e7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-  <sergey-import src="header.html" />
-
-  <section class="flex-center">
-    <h1>Angel Pineda</h1>
+  <section>
+  
+    <span id="greeting">Hello! I'm</span>
+  
+    <h2>Angel Pineda</h2>
+  
+    <div class="photo">
+      <img src="./assets/images/photo.png" alt="Angel Pineda">
+    </div>
+  
+    <article class="social-media">
+      <a href="https://www.linkedin.com/in/angelpineda-dev/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/angelpineda-dev" target="_blank" rel="noopener">
+        <i class="fab fa-github-square"></i>
+      </a>
+      <a href="https://twitter.com/angelpineda_dev" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i>
+      </a>
+    </article>
+  
+    <h1>Front-End Web Developer</h1>
+  
     <p>
-      Thank you for your interest, here you can find information about me and details about my work and what I do.
+      I built web sites with responsive design, libraries and frameworks.
     </p>
   </section>
-  <section class="flex-center">
-    <h2>Recent projects</h2>
-    <p>Here are two of my most recent projects, you can click in the links below to visit the site or the code.</p>
-    <article class="flex-center">
+  
+  <section>
+    <h2>About</h2>
+    <p>
+      A <em>self-taught</em> person, I started to learn web development at my free time, today I work as a profesional and
+      keep learning.
+    </p>
+  
+    <p>
+      A <em>designer</em>, I like to challenge my creative skills building mockups for my own projects.
+    </p>
+  
+    <p>
+      A <em>frelancer</em> I look around for small businesses and entrepreneurs to help them with their web sites.
+    </p>
+  </section>
+  
+  <section>
+    <h2>Projects</h2>
+    <article>
       <h3>Weather App</h3>
       <p>This web application let you know details about the weather of cities and save them in your localStorage,
         using data from <a href="https://openweathermap.org/" target="_blank" rel="noopener" class="link">Open Weather
@@ -56,100 +92,76 @@
       </div>
     </article>
   </section>
-  <hr>
+  
   <section>
-    <article class="flex-center">
-      <h2>Stack</h2>
-      <p>I worked with some programming languages since I was in high school, as java, assembly, C#, more java,
-        ladder, etcetera. Anyway, I developed the logic to solve problems juts, change of stack, now I'm doing it
-        through JavaScript</p>
+    <h2>Technologies</h2>
+  
+    <article>
+      <p>I got an expertise with main web technologies.</p>
+  
+      <div class="technology">
+        <img src="assets/icons/html5-svgrepo-com.svg" alt="HTML">
+        <small>HTML</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/css3-svgrepo-com.svg" alt="CSS">
+        <small>CSS</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/javascript-svgrepo-com.svg" alt="JavaScript">
+        <small>JavaScript</small>
+      </div>
     </article>
-    <article class="carousel-container">
-      <section class="grid-responsive">
-        <div>
-          <img src="assets/icons/html5-svgrepo-com.svg" alt="HTML">
-          <small>HTML</small>
-        </div>
-        <div>
-          <img src="assets/icons/css3-svgrepo-com.svg" alt="CSS">
-          <small>CSS</small>
-        </div>
-        <div>
-          <img src="assets/icons/javascript-svgrepo-com.svg" alt="JavaScript">
-          <small>JavaScript</small>
-        </div>
-        <div>
-          <img src="assets/icons/sass-svgrepo-com.svg" alt="Sass">
-          <small>Sass</small>
-        </div>
-        <div>
-          <img src="assets/icons/bootstrap-svgrepo-com.svg" alt="Bootsrap">
-          <small>Bootstrap</small>
-        </div>
-        <div>
-          <img src="assets/icons/react-logo-svgrepo-com.svg" alt="React js">
-          <small>React.js</small>
-        </div>
-        <div>
-          <img src="assets/icons/redux-logo-svgrepo-com.svg" alt="Redux">
-          <small>Redux</small>
-        </div>
-        <div>
-          <img src="assets/icons/nodejs-1-logo-svgrepo-com.svg" alt="Node js">
-          <small>Node.js</small>
-        </div>
-        <div>
-          <img src="assets/icons/npm-svgrepo-com.svg" alt="npm">
-          <small>npm</small>
-        </div>
-        <div>
-          <img src="assets/icons/git-svgrepo-com.svg" alt="git">
-          <small>git</small>
-        </div>
-        <div>
-          <img src="assets/icons/mongodb-svgrepo-com.svg" alt="mongo db">
-          <small>Mongo DB</small>
-        </div>
-        <div>
-          <img src="assets/icons/figma-1-logo-svgrepo-com.svg" alt="Figma">
-          <small>Figma</small>
-        </div>
-      </section>
+  
+    <article>
+      <p>
+        And feel confortable with some libraries and frameworks around it that I've used for a while.
+      </p>
+  
+      <div class="technology">
+        <img src="assets/icons/sass-svgrepo-com.svg" alt="Sass">
+        <small>Sass</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/nodejs-1-logo-svgrepo-com.svg" alt="Node.js">
+        <small>Node.js</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/git-icon-svgrepo-com.svg" alt="Git">
+        <small>Git</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/react-svgrepo-com.svg" alt="React.js">
+        <small>React.js</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/redux-svgrepo-com.svg" alt="Redux">
+        <small>Redux</small>
+      </div>
     </article>
-
+  
+    <article>
+      <p>Also I've had the opportunity to contribute with technologies that I'm not an expert.</p>
+      <div class="technology">
+        <img src="assets/icons/angular-icon-svgrepo-com.svg" alt="Angular">
+        <small>Angular</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/ionic-svgrepo-com.svg" alt="Ionic">
+        <small>Ionic</small>
+      </div>
+      <div class="technology">
+        <img src="assets/icons/mongodb-svgrepo-com.svg" alt="MongoDB">
+        <small>MongoDB</small>
+      </div>
+    </article>
+    <p>
+      Last but not least, I'm open to learn more technologies to know different perspectives.
+    </p>
   </section>
-  <section>
-    <article class="flex-center">
-      <h2>Let's see more</h2>
-      <section class="flex-center">
-        <p>If you have questions about me, you can come to <a href="./about.html" class="link">About</a> section to see
-          where I've
-          worked and what I
-          mainly did there.</p>
+  
 
-      </section>
-      <section class="flex-center">
-        <p>If you want to see more about my work, you can see more in <a href="./portfolio.html"
-            class="link">Portfolio</a> section,
-          there is also how I
-          work.</p>
-
-      </section>
-      <section class="flex-center">
-        <p>Althought, if you want to talk with me, you can see my information in <a href="./contact.html"
-            class="link">Contact</a>
-          section, or send me al
-          email.</p>
-        <a href="mailto:angeljpa95@gmail.com" class="btn link">Send email</a>
-      </section>
-    </article>
-  </section>
-  <article class="flex-center">
-    <p class="extra-info">This site was built with a Static Site Generator called <a target="_blank" rel="noopener"
-        href="https://sergey.cool/" class="link">Sergey</a>, using HTML,
-      pure CSS and Vanilla JavaScript.
-  </article>
-  <sergey-import src="footer.html" />
+    <a href="#">Contact</a>
 </body>
 
 </html>

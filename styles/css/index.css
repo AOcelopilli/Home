@@ -1,0 +1,81 @@
+/* Main colors */
+/* Secondary colors */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+/* Text */
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+/* title */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif, Arial, Helvetica;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #F8F9FA;
+  color: #5C5C5C;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Dosis", sans-serif, Arial, Helvetica;
+  font-weight: bold;
+}
+
+#greeting {
+  border: 0.25rem solid #9ED5DC;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.photo {
+  background-color: #484978;
+  border-radius: 50%;
+  max-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+}
+.photo img {
+  width: 101%;
+  height: 101%;
+  border-radius: 50%;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+}
+.social-media a {
+  background-color: #2F8791;
+  border-radius: 50%;
+  color: #F8F9FA;
+  font-size: 3rem;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.social-media a:hover {
+  background-color: #9ED5DC;
+}
+
+section {
+  padding: 4rem 0.5rem;
+  text-align: center;
+}
+section > * {
+  margin: 2rem auto;
+  padding: 1rem 0.5rem;
+}
+
+/*# sourceMappingURL=index.css.map */

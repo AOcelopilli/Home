@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch scss/style.scss styles.css",
+    "sass": "sass --watch styles/scss/index.scss styles/css/index.css",
     "start": "sergey",
     "dev": "sergey --watch"
   },
@@ -20,7 +20,10 @@
     "url": "https://github.com/angelpineda-dev/Home/issues"
   },
   "homepage": "https://github.com/angelpineda-dev/Home#readme",
+  "devDependencies": {
+    "sass": "^1.51.0"
+  },
   "dependencies": {
-    "sergey": "^0.0.4"
+    "sergey": "^0.0.13"
   }
 }

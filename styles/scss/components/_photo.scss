@@ -1,0 +1,13 @@
+.photo{
+  background-color: $primary;
+  border-radius: 50%;
+  max-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+
+  img{
+    width: 101%;
+    height: 101%;
+    border-radius: 50%;
+  }
+}
