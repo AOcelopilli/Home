@@ -132,3 +132,10 @@ d.addEventListener("mousemove", (e) => {
     $photo.style.transform = `translateX(${moveX}px) translateY(${moveY}px)`;
   }
 });
+
+
+if (website.designing) {
+  return showMessage;
+}else{
+  return window.location.replace("www.home.com");
+}

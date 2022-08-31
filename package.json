@@ -22,5 +22,8 @@
   "homepage": "https://github.com/angelpineda-dev/Home#readme",
   "dependencies": {
     "sergey": "^0.0.4"
+  },
+  "devDependencies": {
+    "sass": "^1.54.7"
   }
 }
